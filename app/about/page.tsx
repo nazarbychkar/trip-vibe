@@ -37,7 +37,7 @@ export default function Home() {
               We create unforgettable memories
             </h1>
             <p className="text-lg md:text-xl mb-6">
-              We don't just organize trips, we create unique and unforgettable
+              We don&#39;t just organize trips, we create unique and unforgettable
               experiences that remain in the heart of every traveler forever
             </p>
 
