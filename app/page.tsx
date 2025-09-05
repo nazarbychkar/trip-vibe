@@ -606,7 +606,7 @@ export default function Home() {
 
             {/* Paragraph */}
             <p className="safe-paragraph text-lg text-gray-700 mb-8">
-              TripVibe's team of professional managers can plan a trip to any
+              TripVibe&#39;s team of professional managers can plan a trip to any
               corner of the world. From a corporate party in the Carpathians to
               a trip to Kenya!
             </p>
@@ -685,7 +685,7 @@ export default function Home() {
               What do they say about us?
             </div>
             <h3 className="f-h3-heading-2 text-3xl md:text-4xl font-bold">
-              Our customers' reviews
+              Our customers&#39; reviews
             </h3>
           </div>
 
@@ -781,7 +781,7 @@ export default function Home() {
                 an opportunity to realize yourself as a professional in the
                 travel business. We offer the best conditions for cooperation so
                 that your company can develop and prosper. Unleash the potential
-                of your travel business with us - let's discuss partnership
+                of your travel business with us - let&#39;s discuss partnership
                 opportunities so that you can experience the benefits of
                 cooperation with TripVibe!
               </p>
