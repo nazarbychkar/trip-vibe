@@ -5,10 +5,8 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 const myFont = localFont({
-  src: "./evolventa-bold.ttf",
+  src: "../public/fonts/evolventa-bold.ttf",
 });
-
-console.log(myFont)
 
 export const metadata: Metadata = {
   title: "Create Next App",
