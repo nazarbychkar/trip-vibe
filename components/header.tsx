@@ -38,11 +38,11 @@ export default function Header() {
           <Link href="/about" className={linkStyle}>
             About
           </Link>
-          <Link href="#offers" className={linkStyle}>
+          <Link href="/#offers" className={linkStyle}>
             Offers
           </Link>
-          <Link href="#destinations" className={linkStyle}>
-            Home
+          <Link href="/#destinations" className={linkStyle}>
+            Destinations
           </Link>
           <Link href="/contacts" className={linkStyle}>
             Contacts

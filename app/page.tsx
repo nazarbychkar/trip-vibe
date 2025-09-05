@@ -113,7 +113,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="propozicii" className="wbs-section py-20">
+      <section id="offers" className="wbs-section py-20">
         <div className="wbs-container-2 mx- px-6 w-[80%] mx-auto">
           {/* Section Header */}
           <div className="f-margin-bottom-49 text-center">
@@ -480,7 +480,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="napriamki" className="f-section-large py-20 bg-gray-50">
+      <section id="destinations" className="f-section-large py-20 bg-gray-50">
         <div className="f-container-regular mx-auto px-6">
           {/* Section Header */}
           <section className="f-margin-bottom-48 text-center mb-12">

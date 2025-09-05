@@ -114,7 +114,7 @@ export default function Home() {
                 href="#"
                 className="inline-block px-6 py-3 bg-mudblue text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
               >
-                Підібрати тур
+                Choose a tour
               </a>
             </div>
           </div>
