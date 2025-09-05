@@ -31,17 +31,17 @@ export default function ContactForm() {
     const newErrors: Errors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Ім'я обов'язкове";
+      newErrors.name = "Name is required";
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = "Телефон обов'язковий";
+      newErrors.phone = "Phone is required";
     } else if (!/^\+?\d{10,15}$/.test(formData.phone)) {
-      newErrors.phone = "Введіть коректний номер";
+      newErrors.phone = "Enter a valid number";
     }
 
     if (!formData.agreement) {
-      newErrors.agreement = "Потрібна згода";
+      newErrors.agreement = "Consent required";
     }
 
     setErrors(newErrors);
@@ -73,14 +73,14 @@ export default function ContactForm() {
             </h2>
             <div className="text-gray-600 space-y-3 text-lg leading-relaxed">
               <div>
-                <p className="font-medium">м. Київ, метро Позняки</p>
-                <p className="font-medium">ТРЦ Алладін, -1 поверх</p>
+                <p className="font-medium">Kyiv, Poznyaki metro station</p>
+                <p className="font-medium">Aladdin Shopping Center, -1 floor</p>
               </div>
-              <p className="text-gray-500">(біля клубу Appollo)</p>
+              <p className="text-gray-500">(near the Appollo club)</p>
 
               <div className="mt-8 space-y-2">
                 <div>
-                  <span className="font-semibold text-gray-700">Телефон:</span>{" "}
+                  <span className="font-semibold text-gray-700">Phone:</span>{" "}
                   <a
                     href="tel:+380444999722"
                     className="text-red-500 hover:text-red-600 font-medium transition-colors"
@@ -90,7 +90,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <span className="font-semibold text-gray-700">
-                    Режим роботи:
+                    Work schedule:
                   </span>{" "}
                   <span className="text-gray-600">ПН-НД з 10:00 до 21:00</span>
                 </div>
@@ -144,7 +144,7 @@ export default function ContactForm() {
                       <input
                         type="text"
                         name="name"
-                        placeholder="Ім'я"
+                        placeholder="Name"
                         value={formData.name}
                         onChange={handleInputChange}
                         className="w-full bg-gray-50 border-0 rounded-lg px-4 py-4 text-gray-800 placeholder-gray-500 focus:bg-white focus:ring-2 focus:ring-blue-400 focus:outline-none transition-all"
@@ -161,7 +161,7 @@ export default function ContactForm() {
                       <input
                         type="tel"
                         name="phone"
-                        placeholder="Телефон"
+                        placeholder="Phone"
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full bg-gray-50 border-0 rounded-lg px-4 py-4 text-gray-800 placeholder-gray-500 focus:bg-white focus:ring-2 focus:ring-blue-400 focus:outline-none transition-all"
@@ -183,8 +183,8 @@ export default function ContactForm() {
                         className="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
                       />
                       <label className="text-gray-600 text-sm leading-relaxed">
-                        Натискаючи на кнопку «Відправити», я приймаю умови угоди
-                        користувача і даю згоду на обробку моїх даних.
+                        By clicking the "Send" button, I accept the terms of the
+                        user agreement and consent to the processing of my data.
                       </label>
                     </div>
                     {errors.agreement && (
@@ -219,10 +219,10 @@ export default function ContactForm() {
                               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                             />
                           </svg>
-                          <span>Відправка...</span>
+                          <span>Sending...</span>
                         </div>
                       ) : (
-                        "Відправити"
+                        "Send"
                       )}
                     </button>
 
@@ -232,7 +232,7 @@ export default function ContactForm() {
                         type="button"
                         className="text-gray-400 text-sm hover:text-gray-600 transition-colors border-b border-dotted border-gray-300 hover:border-gray-600"
                       >
-                        Повідомити про порушення
+                        Report a violation
                       </button>
                     </div>
                   </div>

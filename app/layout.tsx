@@ -5,8 +5,10 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 const myFont = localFont({
-  src: "public\\fonts\\evolventa-bold.ttf",
+  src: "./evolventa-bold.ttf",
 });
+
+console.log(myFont)
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={myFont.className}>
       <body>
         <Header></Header>
 
