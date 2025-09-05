@@ -3,22 +3,22 @@ import Image from "next/image";
 export default function Home() {
   const testimonials = [
     {
-      text: `3 лютого 2024 року відпочивали в Шармі в готелі Гранд Оазіс Резорт, готель і харчування хороше, розташування відмінне, тільки номерам звичайно потрібен ремонт) але як кажуть відпочивати потрібно з гарним настроєм))).`,
-      author: "Патенко Яна та Єва",
+      text: `On February 3, 2024, we rested in Sharm at the Grand Oasis Resort hotel. The hotel and food are good, the location is excellent, only the rooms certainly need renovation) but as they say, you need to rest with a good mood))).`,
+      author: "Patenko Yana and Eva",
       avatar:
         "https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65d76f8d9d346d4e460e33e7_photo_2024-02-22_17-35-15.jpg",
       rating: 5,
     },
     {
-      text: `Вітаю! Все було супер, хороший готель вибрали, відповідав очікуванням, навіть у деяких моментах їх перевищив. Готель: Domina Coral Вау Aquamrine 5*, летіли з компанією тріп вайб, окреме спасибі менеджеру Михайлової Оксани, що була на зв'язку з нами!) Вже плануємо наступну поїздку!)`,
-      author: "Шевченко Катерина",
+      text: `Congratulations! Everything was great, we chose a good hotel, it met expectations, and even exceeded them in some aspects. Hotel: Domina Coral Wow Aquamrine 5*, we flew with Trip Vibe, special thanks to the manager Oksana Mikhailova, who was in touch with us!) We are already planning our next trip!)`,
+      author: "Shevchenko Kateryna",
       avatar:
         "https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65d26b889cb7c96fa58a7bef_Avatar%2005.png",
       rating: 5,
     },
     {
-      text: `Дякую агентству тріпвайб та менеджеру Дар'ї. Ваша робота взагалі дуже сподобалась. Вам дійсно окреме дякую за все, що ви для нас робили під час відпочинку. Ви повністю задовольнили всі наші бажання. Готель як для 3-х зірок напевно один з найкращих, все сподобалось, дякуємо.`,
-      author: "Ясненко Олександр",
+      text: `Thank you to the tripvibe agency and manager Daria. I really liked your work in general. I really want to thank you for everything you did for us during our vacation. You completely satisfied all our wishes. The hotel is probably one of the best for a 3-star hotel, I liked everything, thank you.`,
+      author: "Yasnenko Oleksandr",
       avatar:
         "https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65e09e9e1a1c7036c3b81456_images.jpg",
       rating: 5,
@@ -120,12 +120,10 @@ export default function Home() {
             <div className="f-title-wrapper-center-2">
               <div className="f-margin-bottom-16">
                 <div className="f-heading-detail-small-2 text-sm font-semibold uppercase">
-                  обери відпочинок мрії
+                  choose your dream vacation
                 </div>
               </div>
-              <h3 className="f-h3-heading-2 text-3xl font-bold">
-                Найкращі пропозиції
-              </h3>
+              <h3 className="f-h3-heading-2 text-3xl font-bold">Best offers</h3>
             </div>
           </div>
 
@@ -143,28 +141,28 @@ export default function Home() {
                       Amphoras Aqua 4
                     </h3>
                     <h3 className="wbs-blog-title _2 text-gray-600">
-                      Египет, Шарм-ель-Шейх
+                      Egypt, Sharm el-Sheikh
                     </h3>
                   </div>
                 </div>
                 <div className="wbs-blog-info p-4">
                   <div className="html-embed w-embed mb-2">
                     <div className="WBS BlogContentData">
-                      ✈️ Виліт:{" "}
-                      <span id="departureDate1">12.09.2025 з Кишенева</span>
+                      ✈️ Departure:{" "}
+                      <span id="departureDate1">12.09.2025 from Chisinau</span>
                     </div>
                   </div>
-                  <p className="wbs-blog-content">📅 7 днів, 6 ночей</p>
+                  <p className="wbs-blog-content">📅 7 days, 6 nights</p>
                   <p className="wbs-blog-content">🍹ALL INCLUSIVE!</p>
                   <p className="wbs-blog-content">
-                    Супер-ціна на економічний, але якісний готель у безвітряній
-                    бухті.
+                    Great price for an economical but high-quality hotel in a
+                    windless bay.
                   </p>
                   <h3 className="wbs-blog-title _3 font-bold text-xl mt-2">
-                    24 780 грн
+                    24,780 UAH
                   </h3>
                   <div className="wbs-button-link-icon flex items-center mt-4 gap-2 cursor-pointer">
-                    <div>Дізнатися більше</div>
+                    <div>Learn more</div>
                     <img
                       src="https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65d26c9be138b91fc3495da8_arrow-right.svg"
                       alt="More"
@@ -185,27 +183,27 @@ export default function Home() {
                       Cesars Belek 5
                     </h3>
                     <h3 className="wbs-blog-title _2 text-gray-600">
-                      Туреччина, Анталія
+                      Turkey, Antalya
                     </h3>
                   </div>
                 </div>
                 <div className="wbs-blog-info p-4">
                   <div className="html-embed w-embed mb-2">
                     <div className="WBS BlogContentData">
-                      ✈️ Виліт:{" "}
-                      <span id="departureDate2">19.09.2025 з Кишенева</span>
+                      ✈️ Departure:{" "}
+                      <span id="departureDate2">09/19/2025 from Chisinau</span>
                     </div>
                   </div>
-                  <p className="wbs-blog-content">📅 7 днів, 6 ночей</p>
+                  <p className="wbs-blog-content">📅 7 days, 6 nights</p>
                   <p className="wbs-blog-content">🍹ALL INCLUSIVE!</p>
                   <p className="wbs-blog-content">
-                    Кращий варіант за принципом ціна/якість!
+                    The best option in terms of price/quality!
                   </p>
                   <h3 className="wbs-blog-title _3 font-bold text-xl mt-2">
-                    29 860 грн
+                    29,860 UAH
                   </h3>
                   <div className="wbs-button-link-icon flex items-center mt-4 gap-2 cursor-pointer">
-                    <div>Дізнатися більше</div>
+                    <div>Learn more</div>
                     <img
                       src="https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65d26c9be138b91fc3495da8_arrow-right.svg"
                       alt="More"
@@ -226,28 +224,27 @@ export default function Home() {
                       Semiramis Village 4
                     </h3>
                     <h3 className="wbs-blog-title _2 text-gray-600">
-                      Греція, Крит
+                      Greece, Crete
                     </h3>
                   </div>
                 </div>
                 <div className="wbs-blog-info p-4">
                   <div className="html-embed w-embed mb-2">
                     <div className="WBS BlogContentData">
-                      ✈️ Виліт:{" "}
-                      <span id="departureDate3">25.09.2025 з Кишенева</span>
+                      ✈️ Departure:{" "}
+                      <span id="departureDate3">09/25/2025 from Chisinau</span>
                     </div>
                   </div>
-                  <p className="wbs-blog-content">📅 7 днів, 6 ночей</p>
+                  <p className="wbs-blog-content">📅 7 days, 6 nights</p>
                   <p className="wbs-blog-content">🍹ALL INCLUSIVE!</p>
                   <p className="wbs-blog-content">
-                    Власний піщано-гальковий пляж, перша берегова лінія -
-                    найкраща ціна!
+                    Private sand and pebble beach, first coastline - best price!
                   </p>
                   <h3 className="wbs-blog-title _3 font-bold text-xl mt-2">
-                    40 190 грн
+                    40 190 UAH
                   </h3>
                   <div className="wbs-button-link-icon flex items-center mt-4 gap-2 cursor-pointer">
-                    <div>Дізнатися більше</div>
+                    <div>Learn more</div>
                     <img
                       src="https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65d26c9be138b91fc3495da8_arrow-right.svg"
                       alt="More"
@@ -273,21 +270,22 @@ export default function Home() {
             {/* Left: Heading */}
             <div className="support-top-left md:w-1/2">
               <div className="f-heading-detail-small-2 text-sm font-semibold uppercase mb-2">
-                ПРО нас
+                ABOUT US
               </div>
               <h2 className="support-top-heading text-3xl md:text-4xl font-bold">
-                Досвідчені професіонали
+                Experienced professionals
               </h2>
             </div>
 
             {/* Right: Paragraph */}
             <div className="support-top-right md:w-1/2">
               <p className="text-gray-700">
-                Ми - ТріпВайб, команда досвідчених професіоналів у сфері
-                туризму, які вже більше 10 років дарують українцям найяскравіші
-                моменти у житті! Ми об'єдналися, щоб створити не просто
-                тур-агентство, а національний бренд, що вражає своєю
-                організованістю, індивідуальним підходом та сервісом!
+                We are TripVibe, a team of experienced professionals in the
+                field of tourism, who have been giving Ukrainians the brightest
+                moments in life for more than 10 years! We have come together to
+                create not just a travel agency, but a national brand that
+                impresses with its organization, individual approach and
+                service!
               </p>
             </div>
           </div>
@@ -301,9 +299,9 @@ export default function Home() {
                   01
                 </div>
                 <div className="support-square-text text-lg font-semibold mb-4">
-                  10 років
+                  10 years
                   <br />
-                  досвіду
+                  experience
                 </div>
                 <img
                   src="https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0ba3d_Circle.svg"
@@ -312,9 +310,9 @@ export default function Home() {
                 />
               </div>
               <p className="text-gray-700">
-                Наш досвід дозволяє нам надавати якісні консультації,
-                оптимізувати маршрути та гарантувати вам незабутні та безпечні
-                пригоди в усіх куточках світу.
+                Our experience allows us to provide quality advice, optimize
+                routes and guarantee you unforgettable and safe adventures in
+                all corners of the world.
               </p>
             </div>
 
@@ -325,9 +323,9 @@ export default function Home() {
                   02
                 </div>
                 <div className="support-square-text text-lg font-semibold mb-4">
-                  Розуміння
+                  Understanding
                   <br />
-                  потреб
+                  needs
                 </div>
                 <img
                   src="https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0ba4a_Triangle.svg"
@@ -336,8 +334,8 @@ export default function Home() {
                 />
               </div>
               <p className="text-gray-700">
-                TripVibe - це 100% український бренд, який глибоко розуміє
-                потреби наших громадян як у середені країни, так і за кордоном.
+                TripVibe is a 100% Ukrainian brand that deeply understands the
+                needs of our citizens both in the country and abroad.
               </p>
             </div>
 
@@ -348,9 +346,9 @@ export default function Home() {
                   03
                 </div>
                 <div className="support-square-text text-lg font-semibold mb-4">
-                  Онлайн
+                  Online
                   <br />
-                  доступ
+                  access
                 </div>
                 <img
                   src="https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0ba4b_Rectangle.svg"
@@ -359,9 +357,9 @@ export default function Home() {
                 />
               </div>
               <p className="text-gray-700">
-                Команда TripVibe завжди на зв'язку 24/7, готова організувати
-                гнучкі подорожі, як індивідуальні тури, так і пакетні,
-                враховуємо будь-які побажання.
+                The TripVibe team is always in touch 24/7, ready to organize
+                flexible trips, both individual tours and packages, taking into
+                account any wishes.
               </p>
             </div>
           </div>
@@ -375,7 +373,7 @@ export default function Home() {
             <div className="f-container-regular text-center mb-12">
               <div className="f-title-wrapper-center margin-bottom-48">
                 <h6 className="f-h6-heading text-sm font-semibold uppercase tracking-wide">
-                  Наші партнери
+                  Our partners
                 </h6>
               </div>
             </div>
@@ -489,11 +487,11 @@ export default function Home() {
             <div className="f-title-wrapper-center">
               <div className="f-margin-bottom-2">
                 <div className="f-heading-detail-small text-sm font-semibold uppercase tracking-wide">
-                  обери свій тур
+                  choose your tour
                 </div>
               </div>
               <h3 className="f-h3-heading text-3xl md:text-4xl font-bold">
-                Гарячі напрямки для подорожі
+                Hot travel destinations
               </h3>
             </div>
           </section>
@@ -508,10 +506,10 @@ export default function Home() {
                 >
                   <div className="naikrashi-napriamki absolute bottom-4 left-4 text-white">
                     <div className="support-top-details-text _2 text-lg font-medium">
-                      від 25 000 грн
+                      from 25,000 UAH
                     </div>
                     <h2 className="support-top-heading text-2xl font-bold">
-                      Туреччина
+                      Turkey
                     </h2>
                   </div>
                 </div>
@@ -521,10 +519,10 @@ export default function Home() {
                 >
                   <div className="naikrashi-napriamki absolute bottom-4 left-4 text-white">
                     <div className="support-top-details-text _2 text-lg font-medium">
-                      від 18 000 грн
+                      from 18,000 UAH
                     </div>
                     <h2 className="support-top-heading text-2xl font-bold">
-                      Греція
+                      Greece
                     </h2>
                   </div>
                 </div>
@@ -541,10 +539,10 @@ export default function Home() {
               >
                 <div className="naikrashi-napriamki absolute bottom-4 left-4 text-white">
                   <div className="support-top-details-text _2 text-lg font-medium">
-                    від 21 000 грн
+                    from 21,000 UAH
                   </div>
                   <h2 className="support-top-heading text-2xl font-bold shadow">
-                    Египет
+                    Egypt
                   </h2>
                 </div>
               </div>
@@ -556,10 +554,10 @@ export default function Home() {
               >
                 <div className="naikrashi-napriamki absolute bottom-4 left-4 text-white">
                   <div className="support-top-details-text _2 text-lg font-medium">
-                    від 35 000 грн
+                    from 35,000 UAH
                   </div>
                   <h2 className="support-top-heading text-2xl font-bold">
-                    ОАЕ
+                    UAE
                   </h2>
                 </div>
               </div>
@@ -571,10 +569,10 @@ export default function Home() {
               >
                 <div className="naikrashi-napriamki absolute bottom-4 left-4 text-white">
                   <div className="support-top-details-text _2 text-lg font-medium">
-                    від 41 000 грн
+                    from 41,000 UAH
                   </div>
                   <h2 className="support-top-heading text-2xl font-bold">
-                    Іспанія
+                    Spain
                   </h2>
                 </div>
               </div>
@@ -586,10 +584,10 @@ export default function Home() {
               >
                 <div className="naikrashi-napriamki absolute bottom-4 left-4 text-white">
                   <div className="support-top-details-text _2 text-lg font-medium">
-                    від 49 000 грн
+                    From 49,000 UAH
                   </div>
                   <h2 className="support-top-heading text-2xl font-bold">
-                    Тайланд
+                    Thailand
                   </h2>
                 </div>
               </div>
@@ -603,14 +601,14 @@ export default function Home() {
           <div className="flex flex-col items-end max-w-4xl mx-auto text-right ">
             {/* Heading */}
             <h2 className="safe-heading text-3xl md:text-4xl font-bold mb-6">
-              Як спланувати унікальну подорож, не схожу на інші?
+              How to plan a unique trip, unlike any other?
             </h2>
 
             {/* Paragraph */}
             <p className="safe-paragraph text-lg text-gray-700 mb-8">
-              Команда професійних менеджерів TripVibe може спланувати подорож у
-              будь-який куточок світу. Від корпоративу у Карпатах, до мандрівки
-              у Кенію!
+              TripVibe's team of professional managers can plan a trip to any
+              corner of the world. From a corporate party in the Carpathians to
+              a trip to Kenya!
             </p>
 
             {/* Buttons */}
@@ -632,7 +630,7 @@ export default function Home() {
                   href="#"
                   className="btn light hero safe w-button px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
                 >
-                  Зробити подорож
+                  Take a trip
                 </a>
               </div>
             </div>
@@ -652,24 +650,24 @@ export default function Home() {
             <div className="shop-local-right flex-1">
               <div className="shop-local-content-wrapper space-y-6">
                 <h2 className="shop-local-heading text-3xl md:text-4xl font-bold">
-                  Завжди на зв'язку
+                  Always in touch
                 </h2>
 
                 <p className="text-gray-700 text-lg">
-                  TripVibe завжди на зв'язку 24/7, готовий організувати гнучкі
-                  подорожі, які відповідають вашим потребам. Чи ви мама, яка
-                  шукає спокій, студент, що прагне пригод, пенсіонер, що хоче
-                  відкрити нові країни, або людина з інвалідністю - ми зробимо
-                  ваш відпочинок незабутнім!
+                  TripVibe is always available 24/7, ready to organize flexible
+                  trips that suit your needs. Whether you are a mom looking for
+                  peace, a student looking for adventure, a retiree looking to
+                  discover new countries, or a person with a disability - we
+                  will make your vacation unforgettable!
                 </p>
 
                 <p className="text-gray-700 text-lg">
-                  У цей важкий час ми вистояли, залишаючись на зв'язку та
-                  надаючи високоякісні послуги. Ми розвиваємося разом з вами,
-                  підлаштовуючись під ваші потреби, адже ваші історії та спогади
-                  - це наша мотивація. Приєднуйтеся до TripVibe, де подорожі
-                  стають не лише маршрутами, але і невичерпним джерелом
-                  натхнення. Ваша пригода чекає на вас!
+                  During this difficult time, we have survived by staying
+                  connected and providing high-quality services. We grow with
+                  you, adapting to your needs, because your stories and memories
+                  are our motivation. Join TripVibe, where travel is not only a
+                  route, but also an inexhaustible source of inspiration. Your
+                  adventure is waiting for you!
                 </p>
               </div>
             </div>
@@ -684,10 +682,10 @@ export default function Home() {
           {/* Section header */}
           <div className="f-margin-bottom-12 text-center">
             <div className="f-heading-detail-small-2 mb-4 text-sm font-medium text-blue-500 uppercase">
-              що про нас говорять?
+              What do they say about us?
             </div>
             <h3 className="f-h3-heading-2 text-3xl md:text-4xl font-bold">
-              Відгуки наших клієнтів
+              Our customers' reviews
             </h3>
           </div>
 
@@ -754,7 +752,7 @@ export default function Home() {
                 href="#"
                 className="inline-block px-6 py-3 bg-mudblue text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
               >
-                Підібрати тур
+                Choose a tour
               </a>
             </div>
           </div>
@@ -768,23 +766,24 @@ export default function Home() {
             <div>
               <div className="f-margin-bottom-14 mb-4">
                 <div className="f-heading-detail-small-5 text-sm font-medium text-blue-500 uppercase">
-                  Партнерство
+                  Partnership
                 </div>
               </div>
 
               <div className="f-margin-bottom-14 mb-4">
                 <h2 className="f-h2-heading text-3xl md:text-4xl font-bold">
-                  Відкрий бізнес з нами
+                  Open a business with us
                 </h2>
               </div>
 
               <p className="f-paragraph-large-3 text-gray-700 mb-6">
-                Партнерство TripVibe – це не тільки вигідний бізнес, але і
-                можливість реалізувати себе як професіонала турбізнесу. Ми
-                пропонуємо найкращі умови співпраці, щоб ваша компанія
-                розвивалася та процвітала. Розкрийте потенціал туристичного
-                бізнесу разом з нами – обговоримо можливості партнерства, щоб ви
-                відчули переваги співпраці з TripVibe!
+                TripVibe partnership is not only a profitable business, but also
+                an opportunity to realize yourself as a professional in the
+                travel business. We offer the best conditions for cooperation so
+                that your company can develop and prosper. Unleash the potential
+                of your travel business with us - let's discuss partnership
+                opportunities so that you can experience the benefits of
+                cooperation with TripVibe!
               </p>
 
               {/* List with icon */}
@@ -803,9 +802,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="f-paragraph-regular-3 text-gray-700">
-                    Напишіть лист на пошту{" "}
+                    Write a letter to the post office{" "}
                     <span className="font-medium">tripvibe@ukr.net</span> аби
-                    почати співпрацю!
+                    start cooperation!
                   </div>
                 </div>
               </div>
