@@ -8,11 +8,18 @@ export default function ContactForm() {
     phone: "",
     agreement: false,
   });
-  const [errors, setErrors] = useState({});
+  type Errors = {
+    name?: string;
+    phone?: string;
+    agreement?: string;
+  };
+  const [errors, setErrors] = useState<Errors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: {
+    target: { name: any; value: any; type: any; checked: any };
+  }) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -21,7 +28,7 @@ export default function ContactForm() {
   };
 
   const validate = () => {
-    const newErrors = {};
+    const newErrors: Errors = {};
 
     if (!formData.name.trim()) {
       newErrors.name = "Ім'я обов'язкове";
@@ -41,7 +48,7 @@ export default function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     if (!validate()) return;
@@ -97,10 +104,10 @@ export default function ContactForm() {
               {/* Form Header */}
               <div className="bg-gradient-to-r from-gray-50 to-white px-8 py-6 border-b border-gray-100">
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                  Форма контакту
+                  Contact form
                 </h2>
                 <p className="text-gray-600 text-sm">
-                  і ми зв'яжемось з вами за 2 хвилини!
+                  and we will contact you in 2 minutes!
                 </p>
               </div>
 
@@ -124,10 +131,10 @@ export default function ContactForm() {
                       </svg>
                     </div>
                     <p className="text-green-600 font-medium text-lg">
-                      Відправлено успішно!
+                      Sent successfully!
                     </p>
                     <p className="text-gray-500 text-sm mt-2">
-                      Ми зв'яжемось з вами найближчим часом
+                      We will contact you shortly.
                     </p>
                   </div>
                 ) : (
