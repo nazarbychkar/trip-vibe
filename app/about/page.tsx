@@ -37,8 +37,9 @@ export default function Home() {
               We create unforgettable memories
             </h1>
             <p className="text-lg md:text-xl mb-6">
-              We don&#39;t just organize trips, we create unique and unforgettable
-              experiences that remain in the heart of every traveler forever
+              We don&#39;t just organize trips, we create unique and
+              unforgettable experiences that remain in the heart of every
+              traveler forever
             </p>
 
             {/* Bitrix24 button */}
@@ -54,6 +55,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
@@ -73,6 +75,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -91,16 +94,17 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="bg-white py-16">
         <div className="container mx-auto px-45">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 bg-terracotta rounded-2xl shadow-lg p-20 ">
             {/* Left Content */}
             <div className="text-center lg:text-left">
               <h2 className="text-2xl font-bold text-white">
-                Ми завжди раді допомогти вам!
+                We are always happy to help you!
               </h2>
               <p className="mt-3 text-white">
-                Професіонали проконсультують вас за лічені хвилини!
+                Professionals will advise you in a matter of minutes!
               </p>
             </div>
 
@@ -116,6 +120,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="relative bg-red-500 text-white h-[80vh] flex items-end">
         <div className="container mx-auto px-40 pb-12">
           <div className="max-w-xl">

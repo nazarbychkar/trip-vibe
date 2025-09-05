@@ -183,8 +183,9 @@ export default function ContactForm() {
                         className="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
                       />
                       <label className="text-gray-600 text-sm leading-relaxed">
-                        By clicking the &#34;Send&#34; button, I accept the terms of the
-                        user agreement and consent to the processing of my data.
+                        By clicking the &#34;Send&#34; button, I accept the
+                        terms of the user agreement and consent to the
+                        processing of my data.
                       </label>
                     </div>
                     {errors.agreement && (
