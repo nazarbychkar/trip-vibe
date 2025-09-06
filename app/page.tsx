@@ -34,10 +34,10 @@ export default function Home() {
   return (
     <main>
       <section className="hero-section bg-red-500 py-20">
-        <div className="container px-6 max-w-7xl mx-auto">
-          <div className="hero-wrapper flex justify-between items-end ">
+        <div className="container px-6 max-w-6xl mx-auto">
+          <div className="hero-wrapper flex flex-col md:flex-row justify-between items-end ">
             {/* Left: Heading & Text */}
-            <div className="w-[30%] px-10">
+            <div className="w-full md:w-[40%] px-10 mb-5">
               <h1 className="hero-heading text-3xl md:text-6xl font-bold text-white">
                 TripVibe - modern Ukrainian travel agency
               </h1>
@@ -47,7 +47,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-col w-[25%]">
+            <div className="flex flex-col w-full md:w-[25%]">
               {/* Right: Form */}
               <div className="form-wrapper bg-white shadow-lg rounded-xl p-8">
                 <h2 className="text-xl font-semibold text-gray-900 mb-2">
@@ -104,7 +104,7 @@ export default function Home() {
               </div>
 
               {/* Divider */}
-              <div className="text-center my-4 text-gray-500">або</div>
+              <div className="text-center my-4 text-gray-500">or</div>
               {/* Phone link */}
               <div className="text-center">
                 <a
@@ -489,7 +489,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="destinations" className="f-section-large py-20 bg-gray-50 max-w-6xl mx-auto">
+      <section
+        id="destinations"
+        className="f-section-large py-20 bg-gray-50 max-w-6xl mx-auto"
+      >
         <div className="f-container-regular mx-auto px-6">
           {/* Section Header */}
           <section className="f-margin-bottom-48 text-center mb-12">
@@ -750,7 +753,7 @@ export default function Home() {
       </section>
 
       <section className="bg-white py-16">
-        <div className="container mx-auto px-45">
+        <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 bg-terracotta rounded-2xl shadow-lg p-20 ">
             {/* Left Content */}
             <div className="text-center lg:text-left">

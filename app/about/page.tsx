@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <main>
       <section className="relative bg-red-500 text-white h-[80vh] flex items-end">
-        <div className="container mx-auto px-40 pb-12">
+        <div className="container mx-auto max-w-6xl pb-12">
           <div className="max-w-xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 ">
               We create unforgettable memories
@@ -66,7 +66,7 @@ export default function Home() {
       </section>
 
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto max-w-6xl px-6">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-red-500 uppercase tracking-wide text-sm font-semibold mb-2">
               Why choose us?
@@ -86,7 +86,7 @@ export default function Home() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto max-w-6xl px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {features.map((f, idx) => (
               <div
@@ -105,7 +105,7 @@ export default function Home() {
       </section>
 
       <section className="bg-white py-16">
-        <div className="container mx-auto px-45">
+        <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 bg-terracotta rounded-2xl shadow-lg p-20 ">
             {/* Left Content */}
             <div className="text-center lg:text-left">
@@ -132,7 +132,7 @@ export default function Home() {
       </section>
 
       <section className="relative bg-red-500 text-white h-[80vh] flex items-end">
-        <div className="container mx-auto px-40 pb-12">
+        <div className="container mx-auto max-w-6xl pb-12">
           <div className="max-w-xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 ">
               Any questions left?
