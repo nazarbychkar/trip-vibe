@@ -50,10 +50,11 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
         <section className="b24-form-wrapper max-w-lg mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
           <div className="b24-form-header p-6 border-b text-center">
             <h2 className="b24-form-header-title text-2xl font-bold text-gray-800">
-              Заповніть форму
+              Fill out the form
             </h2>
             <p className="b24-form-header-description text-gray-600 mt-2">
-              і ми зв'яжемося з вами за 2 хвилини!
+              and we will contact you in 2 minutes!and we will contact you in 2
+              minutes!
             </p>
           </div>
 
@@ -62,7 +63,7 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
               <form onSubmit={handleSubmit} noValidate>
                 <div className="mb-4">
                   <label className="block text-gray-700 mb-1">
-                    Ім'я <span className="text-red-500">*</span>
+                    Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -76,7 +77,7 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
 
                 <div className="mb-4">
                   <label className="block text-gray-700 mb-1">
-                    Телефон <span className="text-red-500">*</span>
+                    Phone <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -96,8 +97,8 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
                     className="mt-1 mr-2"
                   />
                   <span className="text-sm text-gray-600">
-                    Натискаючи на кнопку «Відправити», я приймаю умови угоди
-                    користувача і даю згоду на обробку моїх даних.
+                    By clicking the "Send" button, I accept the terms of the
+                    user agreement and consent to the processing of my data.
                   </span>
                 </div>
 
@@ -106,17 +107,17 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
                     type="submit"
                     className="b24-form-btn w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
                   >
-                    Відправити
+                    Send
                   </button>
                 </div>
               </form>
             ) : (
               <div className="text-center py-10">
                 <div className="text-green-600 text-xl font-semibold">
-                  ✅ Відправлено!
+                  ✅ Sent!
                 </div>
                 <p className="text-gray-600 mt-2">
-                  Ми з вами зв’яжемося найближчим часом.
+                  We will contact you shortly.
                 </p>
               </div>
             )}
