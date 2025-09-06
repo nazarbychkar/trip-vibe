@@ -1,6 +1,12 @@
+"use client";
+
+import ContactDrawer from "@/components/СontactDrawer";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
+
   const features = [
     {
       img: "https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65afd5f52cb2e02b00c0ba68_verified.svg",
@@ -48,7 +54,10 @@ export default function Home() {
               data-b24-form="click/114/he03qc"
               data-skip-moving="true"
             >
-              <a className="px-6 py-3 border border-white text-white rounded-lg hover:bg-white hover:text-red-500 transition cursor-pointer">
+              <a
+                onClick={() => setDrawerOpen(true)}
+                className="px-6 py-3 border border-white text-white rounded-lg hover:bg-white hover:text-red-500 transition cursor-pointer"
+              >
                 Book a tour
               </a>
             </div>
@@ -111,7 +120,8 @@ export default function Home() {
             {/* Button */}
             <div>
               <a
-                href="#"
+                onClick={() => setDrawerOpen(true)}
+                href="#Form"
                 className="inline-block px-6 py-3 bg-mudblue text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
               >
                 Choose a tour
@@ -145,6 +155,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <ContactDrawer open={isDrawerOpen} onClose={() => setDrawerOpen(false)} />
     </main>
   );
 }

@@ -1,6 +1,12 @@
+"use client";
+
+import ContactDrawer from "@/components/СontactDrawer";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
+
   const testimonials = [
     {
       text: `On February 3, 2024, we rested in Sharm at the Grand Oasis Resort hotel. The hotel and food are good, the location is excellent, only the rooms certainly need renovation) but as they say, you need to rest with a good mood))).`,
@@ -128,7 +134,10 @@ export default function Home() {
           </div>
 
           {/* Blog Grid */}
-          <div className="wbs-blog-component">
+          <div
+            className="wbs-blog-component"
+            onClick={() => setDrawerOpen(true)}
+          >
             <div className="wbs-blog-grid grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Blog Item 1 */}
               <a
@@ -497,8 +506,11 @@ export default function Home() {
           </section>
 
           {/* Large Gallery Items */}
-          <div className="w-layout-grid f-gallery-two-column-s grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <a href="#" className="f-gallery-lightbox w-inline-block">
+          <div
+            className="w-layout-grid f-gallery-two-column-s grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
+            onClick={() => setDrawerOpen(true)}
+          >
+            <a href="#Form" className="f-gallery-lightbox w-inline-block">
               <div className="f-gallery-image-x-tall grid grid-cols-2 gap-4">
                 <div
                   className="f-gallery-box _1 bg-cover bg-center h-64 rounded-lg relative"
@@ -531,8 +543,11 @@ export default function Home() {
           </div>
 
           {/* Small Gallery Items */}
-          <div className="w-layout-grid f-gallery-two-column grid grid-cols-2 md:grid-cols-4 gap-4">
-            <a href="#" className="f-gallery-lightbox w-inline-block">
+          <div
+            className="w-layout-grid f-gallery-two-column grid grid-cols-2 md:grid-cols-4 gap-4"
+            onClick={() => setDrawerOpen(true)}
+          >
+            <a href="#Form" className="f-gallery-lightbox w-inline-block">
               <div
                 className="f-gallery-image-x-small-square bg-cover bg-center h-48 rounded-lg relative"
                 style={{ backgroundImage: "url('/images/egypt.jpg')" }}
@@ -547,7 +562,7 @@ export default function Home() {
                 </div>
               </div>
             </a>
-            <a href="#" className="f-gallery-lightbox w-inline-block">
+            <a href="#Form" className="f-gallery-lightbox w-inline-block">
               <div
                 className="f-gallery-image-x-small-square _2 bg-cover bg-center h-48 rounded-lg relative"
                 style={{ backgroundImage: "url('/images/uae.jpg')" }}
@@ -562,7 +577,7 @@ export default function Home() {
                 </div>
               </div>
             </a>
-            <a href="#" className="f-gallery-lightbox w-inline-block">
+            <a href="#Form" className="f-gallery-lightbox w-inline-block">
               <div
                 className="f-gallery-image-x-small-square _3 bg-cover bg-center h-48 rounded-lg relative"
                 style={{ backgroundImage: "url('/images/spain.jpg')" }}
@@ -577,7 +592,7 @@ export default function Home() {
                 </div>
               </div>
             </a>
-            <a href="#" className="f-gallery-lightbox w-inline-block">
+            <a href="#Form" className="f-gallery-lightbox w-inline-block">
               <div
                 className="f-gallery-image-x-small-square _4 bg-cover bg-center h-48 rounded-lg relative"
                 style={{ backgroundImage: "url('/images/thailand.jpg')" }}
@@ -606,9 +621,9 @@ export default function Home() {
 
             {/* Paragraph */}
             <p className="safe-paragraph text-lg text-gray-700 mb-8">
-              TripVibe&#39;s team of professional managers can plan a trip to any
-              corner of the world. From a corporate party in the Carpathians to
-              a trip to Kenya!
+              TripVibe&#39;s team of professional managers can plan a trip to
+              any corner of the world. From a corporate party in the Carpathians
+              to a trip to Kenya!
             </p>
 
             {/* Buttons */}
@@ -627,7 +642,8 @@ export default function Home() {
                   }}
                 ></script>
                 <a
-                  href="#"
+                  onClick={() => setDrawerOpen(true)}
+                  href="#Form"
                   className="btn light hero safe w-button px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
                 >
                   Take a trip
@@ -749,7 +765,8 @@ export default function Home() {
             {/* Button */}
             <div>
               <a
-                href="#"
+                onClick={() => setDrawerOpen(true)}
+                href="#Form"
                 className="inline-block px-6 py-3 bg-mudblue text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
               >
                 Choose a tour
@@ -855,6 +872,8 @@ export default function Home() {
           className="flex-1 min-w-[200px] object-cover"
         ></Image>
       </section>
+
+      <ContactDrawer open={isDrawerOpen} onClose={() => setDrawerOpen(false)} />
     </main>
   );
 }
