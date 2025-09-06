@@ -97,7 +97,7 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
                     className="mt-1 mr-2"
                   />
                   <span className="text-sm text-gray-600">
-                    By clicking the "Send" button, I accept the terms of the
+                    By clicking the &#34;Send&#34; button, I accept the terms of the
                     user agreement and consent to the processing of my data.
                   </span>
                 </div>
