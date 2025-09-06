@@ -63,7 +63,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div id="contact" className="py-16 bg-gray-50 min-h-screen">
+    <div id="contact" className="py-16 bg-gray-50">
       <div className="container mx-auto px-6 lg:px-20 max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-16">
           {/* Left section - Offline Store Info */}

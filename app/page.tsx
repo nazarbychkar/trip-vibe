@@ -1,6 +1,8 @@
 "use client";
 
 import ContactDrawer from "@/components/ContactDrawer";
+import HeroCarousel from "@/components/HeroCarousel";
+import TelegramModal from "@/components/TelegramModal";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -118,6 +120,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <HeroCarousel></HeroCarousel>
 
       <section id="offers" className="wbs-section py-20">
         <div className="wbs-container-2 px-6 max-w-7xl mx-auto">
@@ -877,6 +881,8 @@ export default function Home() {
       </section>
 
       <ContactDrawer open={isDrawerOpen} onClose={() => setDrawerOpen(false)} />
+
+      <TelegramModal />
     </main>
   );
 }
