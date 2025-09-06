@@ -34,11 +34,11 @@ export default function Home() {
   return (
     <main>
       <section className="hero-section bg-red-500 py-20">
-        <div className="container px-6 w-[80%] mx-auto">
+        <div className="container px-6 max-w-7xl mx-auto">
           <div className="hero-wrapper flex justify-between items-end ">
             {/* Left: Heading & Text */}
             <div className="w-[30%] px-10">
-              <h1 className="hero-heading text-3xl md:text-5xl font-bold text-white">
+              <h1 className="hero-heading text-3xl md:text-6xl font-bold text-white">
                 TripVibe - modern Ukrainian travel agency
               </h1>
               <p className="hero-paragraph mt-4 text-lg text-white">
@@ -120,7 +120,7 @@ export default function Home() {
       </section>
 
       <section id="offers" className="wbs-section py-20">
-        <div className="wbs-container-2 mx- px-6 w-[80%] mx-auto">
+        <div className="wbs-container-2 px-6 max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="f-margin-bottom-49 text-center">
             <div className="f-title-wrapper-center-2">
@@ -273,7 +273,7 @@ export default function Home() {
       </section>
 
       <section className="support-section py-20 bg-gray-50">
-        <div className="container _2 mx-auto px-6">
+        <div className="container max-w-6xl mx-auto px-6">
           {/* Top Wrapper */}
           <div className="support-top-wrapper flex flex-col md:flex-row md:justify-between md:items-start mb-12 gap-6">
             {/* Left: Heading */}
@@ -375,7 +375,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="wbs-section-overflow py-20 bg-gray-50">
+      <section className="wbs-section-overflow py-20 bg-gray-50 max-w-6xl mx-auto">
         <div className="wbs-container mx-auto px-6">
           {/* Section Header */}
           <div className="f-section-small">
@@ -489,7 +489,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="destinations" className="f-section-large py-20 bg-gray-50">
+      <section id="destinations" className="f-section-large py-20 bg-gray-50 max-w-6xl mx-auto">
         <div className="f-container-regular mx-auto px-6">
           {/* Section Header */}
           <section className="f-margin-bottom-48 text-center mb-12">

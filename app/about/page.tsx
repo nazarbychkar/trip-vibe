@@ -39,7 +39,7 @@ export default function Home() {
       <section className="relative bg-red-500 text-white h-[80vh] flex items-end">
         <div className="container mx-auto px-40 pb-12">
           <div className="max-w-xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 ">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 ">
               We create unforgettable memories
             </h1>
             <p className="text-lg md:text-xl mb-6">
@@ -134,7 +134,7 @@ export default function Home() {
       <section className="relative bg-red-500 text-white h-[80vh] flex items-end">
         <div className="container mx-auto px-40 pb-12">
           <div className="max-w-xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 ">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 ">
               Any questions left?
             </h1>
             <p className="text-lg md:text-xl mb-6">
