@@ -32,9 +32,9 @@ export default function Home() {
       rating: 5,
     },
   ];
-
+  
   return (
-    <main>
+    <div>
       <section className="hero-section bg-red-500 py-20">
         <div className="container px-6 max-w-6xl mx-auto">
           <div className="hero-wrapper flex flex-col md:flex-row justify-between items-end ">
@@ -883,6 +883,6 @@ export default function Home() {
       <ContactDrawer open={isDrawerOpen} onClose={() => setDrawerOpen(false)} />
 
       <TelegramModal />
-    </main>
+    </div>
   );
 }

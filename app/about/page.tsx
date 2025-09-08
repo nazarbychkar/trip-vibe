@@ -35,7 +35,7 @@ export default function Home() {
   ];
 
   return (
-    <main>
+    <div>
       <section className="relative bg-red-500 text-white h-[80vh] flex items-end">
         <div className="container mx-auto max-w-6xl pb-12">
           <div className="max-w-xl">
@@ -156,6 +156,6 @@ export default function Home() {
         </div>
       </section>
       <ContactDrawer open={isDrawerOpen} onClose={() => setDrawerOpen(false)} />
-    </main>
+    </div>
   );
 }

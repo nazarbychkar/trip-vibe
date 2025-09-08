@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="flex gap-6">
             <Link href="https://t.me/+SmTyR-SXMzk5NThi" target="_blank">
               <Image
-                src="/icons/telegram.png"
+                src="icons/telegram.svg"
                 alt="Telegram"
                 width={30}
                 height={30}
@@ -35,7 +35,7 @@ export default function Footer() {
               target="_blank"
             >
               <Image
-                src="/icons/facebook.svg"
+                src="icons/facebook.svg"
                 alt="Facebook"
                 width={30}
                 height={30}
@@ -46,7 +46,7 @@ export default function Footer() {
               target="_blank"
             >
               <Image
-                src="/icons/instagram.svg"
+                src="icons/instagram.svg"
                 alt="Instagram"
                 width={30}
                 height={30}
@@ -65,27 +65,27 @@ export default function Footer() {
             <p>
               c. Kyiv, metro station Poznyaky
               <br />
-              ТРЦ Алладін, -1 поверх
+              Aladdin Shopping Center, -1 floor
             </p>
-            <p>(біля клубу Appollo)</p>
+            <p>(near the Appollo club)</p>
             <p className="mt-2">
-              <strong>Телефон:</strong>{" "}
+              <strong>Phone:</strong>{" "}
               <Link href="tel:+380444999722" className="hover:underline">
                 +38 044 499 97 22
               </Link>
             </p>
             <p>
-              <strong>Режим роботи:</strong> ПН-НД з 10:00 до 21:00
+              <strong>Work schedule</strong> Mon-Sun from 10:00 to 21:00
             </p>
           </div>
 
           {/* Extra info */}
           <div>
             <p>
-              <strong>Працювати у нас:</strong> tripvibe@ukr.net
+              <strong>Work with us:</strong> tripvibe@ukr.net
             </p>
             <p>
-              <strong>Партнерство:</strong> tripvibe@ukr.net
+              <strong>Partnership:</strong> tripvibe@ukr.net
             </p>
           </div>
         </div>

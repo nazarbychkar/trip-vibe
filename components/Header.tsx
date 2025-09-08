@@ -8,13 +8,13 @@ export default function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const linkStyle =
-    "text-white text-xl px-4 py-2 rounded-md hover:bg-mudblue transition";
+    "text-white text-xl px-4 py-2 rounded-md focus:bg-mudblue transition";
 
   return (
-    <header className="shadow-md bg-terracotta">
-      <nav className="flex justify-center items-center gap-8  py-5">
+    <header className="fixed w-full z-50 shadow-md bg-terracotta">
+      <nav className="flex justify-center items-center gap-8 py-5">
         {/* Logo */}
-        <Link href="/" className="flex-shrink-0 mx-20">
+        <Link href="/" className="flex-shrink-0 mx-10">
           <Image
             src="/logo.png"
             alt="Logo"
@@ -56,46 +56,54 @@ export default function Header() {
           ☰
         </button>
 
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-white shadow-lg p-4 flex flex-col gap-4">
-            <Link
-              className={linkStyle}
-              href="/"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              className={linkStyle}
-              href="/about"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              className={linkStyle}
-              href="/#offers"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Offers
-            </Link>
-            {/* FIX: how to redirect to home and then to anchor */}
-            <Link
-              className={linkStyle}
-              href="/#destinations"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Destinations
-            </Link>
-            <Link
-              className={linkStyle}
-              href="/contacts"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contacts
-            </Link>
-          </div>
-        )}
+        {/* Mobile Menu Overlay */}
+        <div
+          className={`fixed inset-0 bg-terracotta flex flex-col items-center justify-center gap-6 transform transition-transform duration-500 ease-in-out
+            ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+        >
+          <button
+            className="absolute top-5 right-5 text-3xl"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            ✕
+          </button>
+
+          <Link
+            className={linkStyle}
+            href="/"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Home
+          </Link>
+          <Link
+            className={linkStyle}
+            href="/about"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            About
+          </Link>
+          <Link
+            className={linkStyle}
+            href="/#offers"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Offers
+          </Link>
+          <Link
+            className={linkStyle}
+            href="/#destinations"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Destinations
+          </Link>
+          <Link
+            className={linkStyle}
+            href="/contacts"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Contacts
+          </Link>
+        </div>
       </nav>
     </header>
   );
