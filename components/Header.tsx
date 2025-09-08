@@ -8,7 +8,7 @@ export default function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const linkStyle =
-    "text-white text-xl px-4 py-2 rounded-md focus:bg-mudblue transition";
+    "text-white text-xl px-4 py-2 rounded-md hover:bg-mudblue transition";
 
   return (
     <header className="fixed w-full z-50 shadow-md bg-terracotta">

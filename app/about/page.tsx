@@ -36,9 +36,9 @@ export default function Home() {
 
   return (
     <div>
-      <section className="relative bg-red-500 text-white h-[80vh] flex items-end">
-        <div className="container mx-auto max-w-6xl pb-12">
-          <div className="max-w-xl">
+      <section className="relative bg-red-500 text-white h-[80vh] flex items-end ">
+        <div className="container mx-auto px-4 max-w-6xl pb-12">
+          <div className="max-w-xl ">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 ">
               We create unforgettable memories
             </h1>
@@ -132,7 +132,7 @@ export default function Home() {
       </section>
 
       <section className="relative bg-red-500 text-white h-[80vh] flex items-end">
-        <div className="container mx-auto max-w-6xl pb-12">
+        <div className="container mx-auto px-4 max-w-6xl pb-12">
           <div className="max-w-xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 ">
               Any questions left?

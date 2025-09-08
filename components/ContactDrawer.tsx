@@ -53,8 +53,7 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
               Fill out the form
             </h2>
             <p className="b24-form-header-description text-gray-600 mt-2">
-              and we will contact you in 2 minutes!
-              minutes!
+              and we will contact you in 2 minutes! minutes!
             </p>
           </div>
 
@@ -102,10 +101,10 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
                   </span>
                 </div>
 
-                <div className="b24-form-btn-block">
+                <div className="bg-terracotta rounded-lg">
                   <button
                     type="submit"
-                    className="b24-form-btn w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
+                    className="w-full text-white py-2 rounded-lg font-semibold hover:bg-mudblue transition"
                   >
                     Send
                   </button>
