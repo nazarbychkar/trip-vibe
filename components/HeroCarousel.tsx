@@ -9,6 +9,8 @@ export default function HeroCarousel({
 }: {
   onSlideClick?: () => void;
 }) {
+
+  // Redundant links
   const slides = [
     {
       img: "/mediaLocal/vueaxnlv/easyjet-2026-web-desktop-1920x480.png",

@@ -63,15 +63,17 @@ export default function Footer() {
           {/* Contact info */}
           <div>
             <p>
-              c. Kyiv, metro station Poznyaky
+              12 SAXBY COURT
               <br />
-              Aladdin Shopping Center, -1 floor
+              SAXBY CLOSE
+              <br />
+              BARNHAM
             </p>
-            <p>(near the Appollo club)</p>
+            <p>PO22 0GW</p>
             <p className="mt-2">
               <strong>Phone:</strong>{" "}
-              <Link href="tel:+380444999722" className="hover:underline">
-                +38 044 499 97 22
+              <Link href="tel:+447520665098" className="hover:underline">
+                +44 7520 665098
               </Link>
             </p>
             <p>
@@ -82,11 +84,38 @@ export default function Footer() {
           {/* Extra info */}
           <div>
             <p>
-              <strong>Work with us:</strong> tripvibe@ukr.net
+              <strong>Work with us:</strong> info.uk@tripvibe.travel
             </p>
             <p>
-              <strong>Partnership:</strong> tripvibe@ukr.net
+              <strong>Partnership:</strong> info.uk@tripvibe.travel
             </p>
+          </div>
+
+          <div>
+            <p>Payments:</p>
+            <div className="flex flex-row gap-2">
+              <img
+                src="payments/American_Express_logo_(2018).svg.png"
+                alt="american express"
+                width={50}
+              />
+              <img
+                src="payments/Maestro_Logo.svg.webp"
+                alt="maestro"
+                width={75}
+              />
+              <img
+                src="payments/MasterCard_Logo.svg.png"
+                alt="mastercard"
+                width={75}
+              />
+              <img
+                className="bg-white rounded-xl"
+                src="payments/Visa_Inc._logo.svg"
+                alt="visa"
+                width={50}
+              />
+            </div>
           </div>
         </div>
       </div>

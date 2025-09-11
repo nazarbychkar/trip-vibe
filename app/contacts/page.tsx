@@ -69,30 +69,33 @@ export default function ContactForm() {
           {/* Left section - Offline Store Info */}
           <div className="lg:w-1/2">
             <h2 className="text-4xl font-bold text-gray-800 mb-8">
-              Офлайн точка
+              Offline point
             </h2>
             <div className="text-gray-600 space-y-3 text-lg leading-relaxed">
               <div>
-                <p className="font-medium">Kyiv, Poznyaki metro station</p>
-                <p className="font-medium">Aladdin Shopping Center, -1 floor</p>
+                <p className="font-medium">12 SAXBY COURT</p>
+                <p className="font-medium">SAXBY CLOSE</p>
+                <p className="font-medium">BARNHAM</p>
               </div>
-              <p className="text-gray-500">(near the Appollo club)</p>
+              <p className="text-gray-500">PO22 0GW</p>
 
               <div className="mt-8 space-y-2">
                 <div>
                   <span className="font-semibold text-gray-700">Phone:</span>{" "}
                   <a
-                    href="tel:+380444999722"
+                    href="tel:+447520665098"
                     className="text-red-500 hover:text-red-600 font-medium transition-colors"
                   >
-                    +38 044 499 97 22
+                    +44 7520 665098
                   </a>
                 </div>
                 <div>
                   <span className="font-semibold text-gray-700">
                     Work schedule:
                   </span>{" "}
-                  <span className="text-gray-600">ПН-НД з 10:00 до 21:00</span>
+                  <span className="text-gray-600">
+                    Mon-Sun from 10:00 to 21:00
+                  </span>
                 </div>
               </div>
             </div>

@@ -77,9 +77,9 @@ export default function Home() {
             <p className="text-lg text-gray-700 leading-relaxed">
               TripVibe is a team of dedicated professionals working in the field
               of tourism for over 10 years. We have come together to create a
-              new, 100% Ukrainian brand that not only understands the needs of
-              Ukrainians, but also creates trips that turn into unforgettable
-              memories.
+              new, 100% British brand that not only understands the needs of
+              British people, but also creates trips that turn into
+              unforgettable memories.
             </p>
           </div>
         </div>
