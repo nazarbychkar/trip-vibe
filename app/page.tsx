@@ -32,7 +32,7 @@ export default function Home() {
       rating: 5,
     },
   ];
-  
+
   return (
     <div>
       <section className="hero-section bg-red-500 py-20">
@@ -121,7 +121,7 @@ export default function Home() {
         </div>
       </section>
 
-      <HeroCarousel></HeroCarousel>
+      <HeroCarousel onSlideClick={() => setDrawerOpen(true)}></HeroCarousel>
 
       <section id="offers" className="wbs-section py-20">
         <div className="wbs-container-2 px-6 max-w-7xl mx-auto">

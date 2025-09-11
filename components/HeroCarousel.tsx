@@ -4,7 +4,11 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css"; // base styles
 import Image from "next/image";
 
-export default function HeroCarousel() {
+export default function HeroCarousel({
+  onSlideClick,
+}: {
+  onSlideClick?: () => void;
+}) {
   const slides = [
     {
       img: "/mediaLocal/vueaxnlv/easyjet-2026-web-desktop-1920x480.png",
@@ -54,7 +58,14 @@ export default function HeroCarousel() {
       >
         {slides.map((slide, index) => (
           <SplideSlide key={index}>
-            <a href={slide.link} className="block relative">
+            <a
+              href="#Form"
+              className="block relative"
+              onClick={(e) => {
+                e.preventDefault(); // prevent navigation
+                onSlideClick?.(); // open the drawer
+              }}
+            >
               <Image
                 src={slide.img}
                 alt={slide.alt}
