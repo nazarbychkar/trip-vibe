@@ -38,7 +38,7 @@ export default function Home() {
     <div>
       {/* TODO: make background on phone properly */}
       <section
-        className="hero-section relative bg-[position:-350px_center] md:bg-center bg-cover py-20"
+        className="hero-section relative bg-[position:-350px_center] md:bg-top bg-cover py-20"
         style={{
           backgroundImage:
             "url('https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65e44eae3ac5b714ea49512b_photo_2024-03-03_12-18-49.jpg')",
