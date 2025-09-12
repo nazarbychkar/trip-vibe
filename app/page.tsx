@@ -798,7 +798,7 @@ export default function Home() {
               <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-relaxed">
                 <p>
                   TripVibe is available 24/7, ready to organize flexible trips
-                  that meet your needs. Whether you're a mom seeking peace, a
+                  that meet your needs. Whether you&#39;re a mom seeking peace, a
                   student craving adventure, a retiree discovering new places,
                   or someone with accessibility needs — we ensure your vacation
                   is unforgettable.
