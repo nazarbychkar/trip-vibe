@@ -25,7 +25,7 @@ export default function TelegramModal() {
     <div className="fixed bottom-3 left-3 flex m-auto z-50">
       <div
         className={`bg-white rounded-2xl shadow-xl p-8 w-full max-w-md relative text-center transform transition-opacity duration-300 ${
-          visible ? 'opacity-100' : 'opacity-0'
+          visible ? "opacity-100" : "opacity-0"
         }`}
       >
         {/* Success Icon */}

@@ -9,7 +9,6 @@ export default function HeroCarousel({
 }: {
   onSlideClick?: () => void;
 }) {
-
   // Redundant links
   const slides = [
     {

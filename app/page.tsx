@@ -898,7 +898,6 @@ export default function Home() {
                     className="rounded-full object-cover"
                     width={12}
                     height={12}
-
                   />
                   <p className="f-paragraph-regular f-text-weight-medium font-medium">
                     {t.author}
@@ -1015,7 +1014,12 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center p-10">
-            <Image src="trustpilot-1.svg" alt="trust pilot" width={700} height={200}/>
+            <Image
+              src="trustpilot-1.svg"
+              alt="trust pilot"
+              width={700}
+              height={200}
+            />
           </div>
         </div>
       </section>
