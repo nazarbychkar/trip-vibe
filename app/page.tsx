@@ -107,7 +107,7 @@ export default function Home() {
                   {/* Submit */}
                   <button
                     type="submit"
-                    className="w-full bg-terracotta text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+                    className="w-full hover:cursor-pointer bg-terracotta text-white py-3 rounded-lg font-semibold hover:bg-red-500 transition"
                   >
                     Choose a tour
                   </button>
@@ -120,7 +120,7 @@ export default function Home() {
               <div className="text-center">
                 <a
                   href="tel:+44 7520 665098"
-                  className="inline-block bg-terracotta text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
+                  className="inline-block bg-terracotta text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-500 transition"
                 >
                   Call +44 7520 665098
                 </a>
@@ -406,7 +406,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="wbs-section-overflow py-20 bg-gray-50 max-w-6xl mx-auto">
+      <section className="wbs-section-overflow py-20 bg-white max-w-6xl mx-auto">
         <div className="wbs-container mx-auto px-6">
           {/* Section Header */}
           <div className="f-section-small">
@@ -419,8 +419,8 @@ export default function Home() {
             </div>
 
             {/* Partners Grid */}
-            <div className="w-layout-grid f-grid-four-column grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 wwlg:grid-cols-7 gap-6 items-center justify-items-center">
-              <div className="f-logo-block">
+            <div className="w-layout-grid f-grid-four-column grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 wwlg:grid-cols-7 gap-6 items-center justify-items-center ">
+              <div className="f-logo-block ">
                 <img
                   src="tour-operators-logos/abta.png"
                   alt="ABTA"
@@ -531,9 +531,9 @@ export default function Home() {
       {/* TODO: add black filter to see text better */}
       <section
         id="destinations"
-        className="f-section-large py-20 bg-gray-50 max-w-6xl mx-auto "
+        className="f-section-large py-20 bg-gray-50  mx-auto "
       >
-        <div className="f-container-regular mx-auto px-6">
+        <div className="f-container-regular mx-auto px-6 max-w-6xl">
           {/* Section Header */}
           <section className="f-margin-bottom-48 text-center mb-12">
             <div className="f-title-wrapper-center">
@@ -548,185 +548,190 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Large Gallery Items */}
-          <div className="f-gallery-image-x-tall grid grid-cols-2 gap-4 w-full mb-4">
-            <div
-              className="f-gallery-box _1 bg-cover bg-center h-64 rounded-lg relative w-full"
-              style={{
-                backgroundImage: "url('/contries-photo/canary-islands.webp')",
-              }}
-            >
-              <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
-              <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
-                <div className="support-top-details-text _2 text-lg font-medium">
-                  from ???
+          <div onClick={() => setDrawerOpen(true)}>
+            {/* Large Gallery Items */}
+            <div className="f-gallery-image-x-tall grid grid-cols-2 gap-4 w-full mb-4">
+              <a href="#Form" className="f-gallery-lightbox w-inline-block">
+                <div
+                  className="f-gallery-box _1 bg-cover bg-center h-64 rounded-lg relative w-full"
+                  style={{
+                    backgroundImage:
+                      "url('/contries-photo/canary-islands.webp')",
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
+                  <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
+                    <div className="support-top-details-text _2 text-lg font-medium">
+                      from ???
+                    </div>
+                    <h2 className="support-top-heading text-2xl font-bold">
+                      Canary Islands
+                    </h2>
+                  </div>
                 </div>
-                <h2 className="support-top-heading text-2xl font-bold">
-                  Canary Islands
-                </h2>
+              </a>
+
+              <div
+                className="f-gallery-box _2 bg-cover bg-center h-64 rounded-lg relative w-full"
+                style={{
+                  backgroundImage: "url('/contries-photo/Tenerife.jpeg')",
+                }}
+              >
+                <a href="#Form" className="f-gallery-lightbox w-inline-block">
+                  <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
+                  <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
+                    <div className="support-top-details-text _2 text-lg font-medium">
+                      from £398
+                    </div>
+                    <h2 className="support-top-heading text-2xl font-bold">
+                      Tenerife
+                    </h2>
+                  </div>
+                </a>
               </div>
             </div>
-            <div
-              className="f-gallery-box _2 bg-cover bg-center h-64 rounded-lg relative w-full"
-              style={{
-                backgroundImage: "url('/contries-photo/Tenerife.jpeg')",
-              }}
-            >
-              <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
-              <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
-                <div className="support-top-details-text _2 text-lg font-medium">
-                  from £398
+
+            {/* Small Gallery Items */}
+            <div className="w-layout-grid f-gallery-two-column grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+              <a href="#Form" className="f-gallery-lightbox w-inline-block">
+                <div
+                  className="f-gallery-image-x-small-square bg-cover bg-center h-48 rounded-lg relative"
+                  style={{
+                    backgroundImage: "url('/contries-photo/Florida USA.webp')",
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
+                  <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
+                    {" "}
+                    <div className="support-top-details-text _2 text-lg font-medium">
+                      £870
+                    </div>
+                    <h2 className="support-top-heading text-2xl font-bold shadow">
+                      Florida USA
+                    </h2>
+                  </div>
                 </div>
-                <h2 className="support-top-heading text-2xl font-bold">
-                  Tenerife
-                </h2>
-              </div>
+              </a>
+              <a href="#Form" className="f-gallery-lightbox w-inline-block">
+                <div
+                  className="f-gallery-image-x-small-square _2 bg-cover bg-center h-48 rounded-lg relative"
+                  style={{
+                    backgroundImage:
+                      "url('/contries-photo/Spain South Coast.jpg')",
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
+                  <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
+                    {" "}
+                    <div className="support-top-details-text _2 text-lg font-medium">
+                      £490
+                    </div>
+                    <h2 className="support-top-heading text-2xl font-bold">
+                      Spain South Coast
+                    </h2>
+                  </div>
+                </div>
+              </a>
+              <a href="#Form" className="f-gallery-lightbox w-inline-block">
+                <div
+                  className="f-gallery-image-x-small-square _3 bg-cover bg-center h-48 rounded-lg relative"
+                  style={{
+                    backgroundImage: "url('/contries-photo/Mallorca .jpg')",
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
+                  <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
+                    {" "}
+                    <div className="support-top-details-text _2 text-lg font-medium">
+                      £380
+                    </div>
+                    <h2 className="support-top-heading text-2xl font-bold">
+                      Mallorca
+                    </h2>
+                  </div>
+                </div>
+              </a>
+              <a href="#Form" className="f-gallery-lightbox w-inline-block">
+                <div
+                  className="f-gallery-image-x-small-square _4 bg-cover bg-center h-48 rounded-lg relative"
+                  style={{
+                    backgroundImage: "url('/contries-photo/Greece.jpg')",
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
+                  <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
+                    {" "}
+                    <div className="support-top-details-text _2 text-lg font-medium">
+                      £430
+                    </div>
+                    <h2 className="support-top-heading text-2xl font-bold">
+                      Greece
+                    </h2>
+                  </div>
+                </div>
+              </a>
             </div>
-          </div>
 
-          {/* Small Gallery Items */}
-          <div
-            className="w-layout-grid f-gallery-two-column grid grid-cols-2 md:grid-cols-4 gap-4 mb-4"
-            onClick={() => setDrawerOpen(true)}
-          >
-            <a href="#Form" className="f-gallery-lightbox w-inline-block">
-              <div
-                className="f-gallery-image-x-small-square bg-cover bg-center h-48 rounded-lg relative"
-                style={{
-                  backgroundImage: "url('/contries-photo/Florida USA.webp')",
-                }}
-              >
-                <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
-                <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
-                  {" "}
-                  <div className="support-top-details-text _2 text-lg font-medium">
-                    £870
+            {/* Average Gallery Items */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <a href="#Form" className="f-gallery-lightbox w-inline-block">
+                <div
+                  className="f-gallery-image-x-small-square _4 bg-cover bg-center h-48 rounded-lg relative"
+                  style={{
+                    backgroundImage: "url('/contries-photo/Türkiye.jpg')",
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
+                  <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
+                    {" "}
+                    <div className="support-top-details-text _2 text-lg font-medium">
+                      £520
+                    </div>
+                    <h2 className="support-top-heading text-2xl font-bold">
+                      Türkiye
+                    </h2>
                   </div>
-                  <h2 className="support-top-heading text-2xl font-bold shadow">
-                    Florida USA
-                  </h2>
                 </div>
-              </div>
-            </a>
-            <a href="#Form" className="f-gallery-lightbox w-inline-block">
-              <div
-                className="f-gallery-image-x-small-square _2 bg-cover bg-center h-48 rounded-lg relative"
-                style={{
-                  backgroundImage:
-                    "url('/contries-photo/Spain South Coast.jpg')",
-                }}
-              >
-                <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
-                <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
-                  {" "}
-                  <div className="support-top-details-text _2 text-lg font-medium">
-                    £490
+              </a>
+              <a href="#Form" className="f-gallery-lightbox w-inline-block">
+                <div
+                  className="f-gallery-image-x-small-square _4 bg-cover bg-center h-48 rounded-lg relative"
+                  style={{
+                    backgroundImage: "url('/contries-photo/Thailand.webp')",
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
+                  <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
+                    {" "}
+                    <div className="support-top-details-text _2 text-lg font-medium">
+                      £798
+                    </div>
+                    <h2 className="support-top-heading text-2xl font-bold">
+                      Thailand
+                    </h2>
                   </div>
-                  <h2 className="support-top-heading text-2xl font-bold">
-                    Spain South Coast
-                  </h2>
                 </div>
-              </div>
-            </a>
-            <a href="#Form" className="f-gallery-lightbox w-inline-block">
-              <div
-                className="f-gallery-image-x-small-square _3 bg-cover bg-center h-48 rounded-lg relative"
-                style={{
-                  backgroundImage: "url('/contries-photo/Mallorca .jpg')",
-                }}
-              >
-                <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
-                <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
-                  {" "}
-                  <div className="support-top-details-text _2 text-lg font-medium">
-                    £380
+              </a>
+              <a href="#Form" className="f-gallery-lightbox w-inline-block">
+                <div
+                  className="f-gallery-image-x-small-square _4 bg-cover bg-center h-48 rounded-lg relative"
+                  style={{
+                    backgroundImage: "url('/contries-photo/World Cruises.jpg')",
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
+                  <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
+                    {" "}
+                    <div className="support-top-details-text _2 text-lg font-medium">
+                      £340
+                    </div>
+                    <h2 className="support-top-heading text-2xl font-bold">
+                      World Cruises
+                    </h2>
                   </div>
-                  <h2 className="support-top-heading text-2xl font-bold">
-                    Mallorca
-                  </h2>
                 </div>
-              </div>
-            </a>
-            <a href="#Form" className="f-gallery-lightbox w-inline-block">
-              <div
-                className="f-gallery-image-x-small-square _4 bg-cover bg-center h-48 rounded-lg relative"
-                style={{
-                  backgroundImage: "url('/contries-photo/Greece.jpg')",
-                }}
-              >
-                <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
-                <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
-                  {" "}
-                  <div className="support-top-details-text _2 text-lg font-medium">
-                    £430
-                  </div>
-                  <h2 className="support-top-heading text-2xl font-bold">
-                    Greece
-                  </h2>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          {/* Average Gallery Items */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <a href="#Form" className="f-gallery-lightbox w-inline-block">
-              <div
-                className="f-gallery-image-x-small-square _4 bg-cover bg-center h-48 rounded-lg relative"
-                style={{
-                  backgroundImage: "url('/contries-photo/Türkiye.jpg')",
-                }}
-              >
-                <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
-                <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
-                  {" "}
-                  <div className="support-top-details-text _2 text-lg font-medium">
-                    £520
-                  </div>
-                  <h2 className="support-top-heading text-2xl font-bold">
-                    Türkiye
-                  </h2>
-                </div>
-              </div>
-            </a>
-            <a href="#Form" className="f-gallery-lightbox w-inline-block">
-              <div
-                className="f-gallery-image-x-small-square _4 bg-cover bg-center h-48 rounded-lg relative"
-                style={{
-                  backgroundImage: "url('/contries-photo/Thailand.webp')",
-                }}
-              >
-                <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
-                <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
-                  {" "}
-                  <div className="support-top-details-text _2 text-lg font-medium">
-                    £798
-                  </div>
-                  <h2 className="support-top-heading text-2xl font-bold">
-                    Thailand
-                  </h2>
-                </div>
-              </div>
-            </a>
-            <a href="#Form" className="f-gallery-lightbox w-inline-block">
-              <div
-                className="f-gallery-image-x-small-square _4 bg-cover bg-center h-48 rounded-lg relative"
-                style={{
-                  backgroundImage: "url('/contries-photo/World Cruises.jpg')",
-                }}
-              >
-                <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
-                <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
-                  {" "}
-                  <div className="support-top-details-text _2 text-lg font-medium">
-                    £340
-                  </div>
-                  <h2 className="support-top-heading text-2xl font-bold">
-                    World Cruises
-                  </h2>
-                </div>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -782,55 +787,41 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="shop-local-section py-20 bg-gray-50">
-        <div className="container mx-auto px-6 ">
-          <div className="shop-local-wrapper relative">
-            {/* Blue background container - inset from left */}
-            <div className="bg-mudblue rounded-2xl h-80 lg:h-96 relative overflow-hidden ml-32 lg:ml-100 py-70">
-              {/* Text content positioned to the right */}
-              <div className="absolute right-0 top-0 w-full lg:w-4/5 h-full p-8 lg:p-12 flex flex-col justify-center">
-                <div className="shop-local-content-wrapper space-y-6 text-white mx-30 text-left">
-                  <h2 className="shop-local-heading text-3xl lg:text-4xl font-bold leading-tight">
-                    Always in touch
-                  </h2>
-
-                  <div className="space-y-4 text-base lg:text-lg leading-relaxed">
-                    <p>
-                      TripVibe is always available 24/7, ready to organize
-                      flexible trips that meet your needs. Whether you are a mom
-                      looking for peace, a student looking for adventure, a
-                      retiree looking to discover new countries, or a person
-                      with a disability - we will make your vacation
-                      unforgettable!
-                    </p>
-
-                    <p>
-                      During this difficult time, we have survived by staying
-                      connected and providing high-quality services. We grow
-                      with you, adapting to your needs, because your stories and
-                      memories are our motivation. Join TripVibe, where travel
-                      becomes not only a route, but also an inexhaustible source
-                      of inspiration. Your adventure awaits you!
-                    </p>
-                  </div>
-                </div>
+      <section className="py-20 bg-white ">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-10">
+            {/* Text Section */}
+            <div className="w-full lg:w-1/2 text-left">
+              <h2 className="text-3xl sm:text-4xl font-bold text-mudblue mb-6">
+                Always in touch
+              </h2>
+              <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-relaxed">
+                <p>
+                  TripVibe is available 24/7, ready to organize flexible trips
+                  that meet your needs. Whether you're a mom seeking peace, a
+                  student craving adventure, a retiree discovering new places,
+                  or someone with accessibility needs — we ensure your vacation
+                  is unforgettable.
+                </p>
+                <p>
+                  Through challenging times, we’ve stayed connected and
+                  delivered high-quality service. We grow with you, adapt to
+                  your needs, and are inspired by your stories and memories.
+                  Join TripVibe — where travel becomes more than a destination.
+                  Your adventure begins here.
+                </p>
               </div>
             </div>
 
-            {/* Image positioned on the edge of blue background */}
-            <div
-              className="absolute left-60 top-4 lg:top-8 w-64 lg:w-90 h-64 lg:h-125 bg-cover rounded-xl shadow-2xl overflow-hidden"
-              style={{
-                backgroundImage:
-                  "url('https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65e0a27e8193c0fd3c711af0_photo_1_2024-02-29_17-27-34.jpg')",
-              }}
-            >
-              {/* Placeholder for the office/workspace image */}
-              {/* <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                <span className="text-white text-sm opacity-50">
-                  Office Image
-                </span>
-              </div> */}
+            {/* Image Section */}
+            <div className="w-full lg:w-1/2">
+              <div
+                className="w-full h-64 sm:h-80 lg:h-96 rounded-xl shadow-xl bg-cover bg-center"
+                style={{
+                  backgroundImage:
+                    "url('https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65e0a27e8193c0fd3c711af0_photo_1_2024-02-29_17-27-34.jpg')",
+                }}
+              />
             </div>
           </div>
         </div>
@@ -994,7 +985,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="f-section-regular relative py-20 bg-gray-50">
+      <section className="f-section-regular relative py-20 bg-white">
         <div className="f-testimonial-background absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-100 -z-10"></div>
 
         <div className="f-container-regular-2 max-w-6xl mx-auto px-6">
