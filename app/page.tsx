@@ -38,7 +38,7 @@ export default function Home() {
     <div>
       {/* TODO: make background on phone properly */}
       <section
-        className="hero-section relative bg-cover py-20"
+        className="hero-section relative bg-[position:-350px_center] md:bg-center bg-cover py-20"
         style={{
           backgroundImage:
             "url('https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65e44eae3ac5b714ea49512b_photo_2024-03-03_12-18-49.jpg')",
@@ -191,10 +191,11 @@ export default function Home() {
                   </h3>
                   <div className="wbs-button-link-icon flex items-center mt-4 gap-2 cursor-pointer">
                     <div>Learn more</div>
-                    <img
+                    <Image
                       src="https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65d26c9be138b91fc3495da8_arrow-right.svg"
                       alt="More"
-                      className="wbs-button-link-icon-image w-4 h-4"
+                      width={4}
+                      height={4}
                     />
                   </div>
                 </div>
@@ -238,10 +239,11 @@ export default function Home() {
                   </h3>
                   <div className="wbs-button-link-icon flex items-center mt-4 gap-2 cursor-pointer">
                     <div>Learn more</div>
-                    <img
+                    <Image
                       src="https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65d26c9be138b91fc3495da8_arrow-right.svg"
                       alt="More"
-                      className="wbs-button-link-icon-image w-4 h-4"
+                      width={4}
+                      height={4}
                     />
                   </div>
                 </div>
@@ -285,10 +287,11 @@ export default function Home() {
                   </h3>
                   <div className="wbs-button-link-icon flex items-center mt-4 gap-2 cursor-pointer">
                     <div>Learn more</div>
-                    <img
+                    <Image
                       src="https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65d26c9be138b91fc3495da8_arrow-right.svg"
                       alt="More"
-                      className="wbs-button-link-icon-image w-4 h-4"
+                      width={4}
+                      height={4}
                     />
                   </div>
                 </div>
@@ -343,10 +346,12 @@ export default function Home() {
                   <br />
                   experience
                 </div>
-                <img
+                <Image
                   src="https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0ba3d_Circle.svg"
                   alt="Circle Decoration"
-                  className="support-square-image absolute top-2 right-2 w-12 h-12 opacity-50"
+                  className="support-square-image absolute top-2 right-2 opacity-50"
+                  width={12}
+                  height={12}
                 />
               </div>
               <p className="text-gray-700">
@@ -367,10 +372,12 @@ export default function Home() {
                   <br />
                   needs
                 </div>
-                <img
+                <Image
                   src="https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0ba4a_Triangle.svg"
                   alt="Triangle Decoration"
-                  className="support-square-image triangle absolute top-2 right-2 w-12 h-12 opacity-50"
+                  className="support-square-image triangle absolute top-2 right-2  opacity-50"
+                  width={12}
+                  height={12}
                 />
               </div>
               <p className="text-gray-700">
@@ -390,10 +397,12 @@ export default function Home() {
                   <br />
                   access
                 </div>
-                <img
+                <Image
                   src="https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0ba4b_Rectangle.svg"
                   alt="Rectangle Decoration"
-                  className="support-square-image rectangle absolute top-2 right-2 w-12 h-12 opacity-50"
+                  className="support-square-image rectangle absolute top-2 right-2 opacity-50"
+                  width={12}
+                  height={12}
                 />
               </div>
               <p className="text-gray-700">
@@ -421,106 +430,119 @@ export default function Home() {
             {/* Partners Grid */}
             <div className="w-layout-grid f-grid-four-column grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 wwlg:grid-cols-7 gap-6 items-center justify-items-center ">
               <div className="f-logo-block ">
-                <img
-                  src="tour-operators-logos/abta.png"
+                <Image
+                  src="/tour-operators-logos/abta.png"
                   alt="ABTA"
                   width={150}
+                  height={150}
                 />
               </div>
 
               <div className="f-logo-block">
-                <img
-                  src="tour-operators-logos/atol-n.png"
+                <Image
+                  src="/tour-operators-logos/atol-n.png"
                   alt="Atol"
                   width={150}
+                  height={150}
                 />
               </div>
 
               <div className="f-logo-block">
-                <img
-                  src="tour-operators-logos/Celebrity-X-Cruises.png"
+                <Image
+                  src="/tour-operators-logos/Celebrity-X-Cruises.png"
                   alt="Celebrity X Cruises"
                   width={150}
+                  height={150}
                 />
               </div>
 
               <div className="f-logo-block">
-                <img
-                  src="tour-operators-logos/EasyJet-Holidays-e7ec4318-5dcc70d2.png"
+                <Image
+                  src="/tour-operators-logos/EasyJet-Holidays-e7ec4318-5dcc70d2.png"
                   alt="Kompas"
                   width={150}
+                  height={150}
                 />
               </div>
 
               <div className="f-logo-block">
-                <img
-                  src="tour-operators-logos/Eurostar+small.png"
+                <Image
+                  src="/tour-operators-logos/Eurostar+small.png"
                   alt="JU Poland"
                   width={150}
+                  height={150}
                 />
               </div>
 
               <div className="f-logo-block">
-                <img
-                  src="tour-operators-logos/Jet2-Holidays.png"
+                <Image
+                  src="/tour-operators-logos/Jet2-Holidays.png"
                   alt="TPG"
                   width={150}
+                  height={150}
                 />
               </div>
 
               <div className="f-logo-block">
-                <img
-                  src="tour-operators-logos/MSC+Cruises.png"
+                <Image
+                  src="/tour-operators-logos/MSC+Cruises.png"
                   alt="Partner Logo"
                   width={150}
+                  height={150}
                 />
               </div>
 
               <div className="f-logo-block">
-                <img
-                  src="tour-operators-logos/Newmarket+Holidays.png"
+                <Image
+                  src="/tour-operators-logos/Newmarket+Holidays.png"
                   alt="Partner Logo"
                   width={150}
+                  height={150}
                 />
               </div>
 
               <div className="f-logo-block">
-                <img
-                  src="tour-operators-logos/Norwegian+Cruise+Lines.png"
+                <Image
+                  src="/tour-operators-logos/Norwegian+Cruise+Lines.png"
                   alt="PrivatBank"
                   width={150}
+                  height={150}
                 />
               </div>
 
               <div className="f-logo-block">
-                <img
-                  src="tour-operators-logos/Olympic+Holidays.png"
+                <Image
+                  src="/tour-operators-logos/Olympic+Holidays.png"
                   alt="Partner Logo"
                   width={150}
+                  height={150}
                 />
               </div>
 
               <div className="f-logo-block">
-                <img
-                  src="tour-operators-logos/Solmar.png"
+                <Image
+                  src="/tour-operators-logos/Solmar.png"
                   alt="Accord"
                   width={150}
+                  height={150}
                 />
               </div>
 
               <div className="f-logo-block">
-                <img
-                  src="tour-operators-logos/travel_mts.png"
+                <Image
+                  src="/tour-operators-logos/travel_mts.png"
                   alt="Asvio"
                   width={150}
+                  height={150}
                 />
               </div>
 
               <div className="f-logo-block">
-                <img
-                  src="tour-operators-logos/TUI.png"
+                <Image
+                  src="/tour-operators-logos/TUI.png"
                   alt="Asvio"
                   width={150}
+                  height={150}
                 />
               </div>
             </div>
@@ -798,8 +820,8 @@ export default function Home() {
               <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-relaxed">
                 <p>
                   TripVibe is available 24/7, ready to organize flexible trips
-                  that meet your needs. Whether you&#39;re a mom seeking peace, a
-                  student craving adventure, a retiree discovering new places,
+                  that meet your needs. Whether you&#39;re a mom seeking peace,
+                  a student craving adventure, a retiree discovering new places,
                   or someone with accessibility needs — we ensure your vacation
                   is unforgettable.
                 </p>
@@ -870,10 +892,13 @@ export default function Home() {
 
                 {/* Author */}
                 <div className="f-testimonial-author flex items-center gap-4 mt-auto">
-                  <img
+                  <Image
                     src={t.avatar}
                     alt={t.author}
-                    className="f-testimonial-avatar-small w-12 h-12 rounded-full object-cover"
+                    className="rounded-full object-cover"
+                    width={12}
+                    height={12}
+
                   />
                   <p className="f-paragraph-regular f-text-weight-medium font-medium">
                     {t.author}
@@ -965,18 +990,11 @@ export default function Home() {
 
             {/* Right image */}
             <div className="f-content-image-wrapper-large">
-              <img
+              <Image
                 src="https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65e30d8192a2687a5ea9a944_partnership2.jpg"
                 loading="lazy"
-                srcSet="
-                https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65e30d8192a2687a5ea9a944_partnership2-p-500.jpg 500w,
-                https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65e30d8192a2687a5ea9a944_partnership2-p-800.jpg 800w,
-                https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65e30d8192a2687a5ea9a944_partnership2-p-1080.jpg 1080w,
-                https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65e30d8192a2687a5ea9a944_partnership2-p-1600.jpg 1600w,
-                https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65e30d8192a2687a5ea9a944_partnership2-p-2000.jpg 2000w,
-                https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65e30d8192a2687a5ea9a944_partnership2.jpg 2078w
-              "
-                sizes="(max-width: 2078px) 100vw, 2078px"
+                width={2078}
+                height={1385}
                 alt="Партнерство TripVibe"
                 className="f-image-cover-4 w-full h-auto rounded-xl object-cover"
               />
@@ -997,7 +1015,7 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center p-10">
-            <img src="trustpilot-1.svg" alt="trust pilot" className="w-200" />
+            <Image src="trustpilot-1.svg" alt="trust pilot" width={700} height={200}/>
           </div>
         </div>
       </section>

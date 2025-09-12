@@ -94,26 +94,30 @@ export default function Footer() {
           <div>
             <p>Payments:</p>
             <div className="flex flex-row gap-2">
-              <img
-                src="payments/American_Express_logo_(2018).svg.png"
+              <Image
+                src="/payments/American_Express_logo_(2018).svg.png"
                 alt="american express"
                 width={50}
+                height={50}
               />
-              <img
-                src="payments/Maestro_Logo.svg.webp"
+              <Image
+                src="/payments/Maestro_Logo.svg.webp"
                 alt="maestro"
                 width={75}
+                height={50}
               />
-              <img
-                src="payments/MasterCard_Logo.svg.png"
+              <Image
+                src="/payments/MasterCard_Logo.svg.png"
                 alt="mastercard"
                 width={75}
+                height={50}
               />
-              <img
+              <Image
                 className="bg-white rounded-xl"
-                src="payments/Visa_Inc._logo.svg"
+                src="/payments/Visa_Inc._logo.svg"
                 alt="visa"
                 width={50}
+                height={50}
               />
             </div>
           </div>
