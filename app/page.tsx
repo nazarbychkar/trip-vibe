@@ -2,6 +2,8 @@
 
 import ContactDrawer from "@/components/ContactDrawer";
 import HeroCarousel from "@/components/HeroCarousel";
+import AboutPage from "@/components/pages/AboutPage";
+import ContactPage from "@/components/pages/ContactPage";
 // import TelegramModal from "@/components/TelegramModal";
 import Image from "next/image";
 import { useState } from "react";
@@ -9,6 +11,48 @@ import { useState } from "react";
 // TODO: replace all img with next's Image
 export default function Home() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
+
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [agreement, setAgreement] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name || !phone || !agreement) {
+      alert("Please fill in all fields.");
+      return;
+    }
+    setSubmitted(true);
+    // Here you would connect Bitrix24 API or backend handler
+    const endpoint =
+      "https://crm-tour.bitrix24.eu/rest/1/w7kn0c290mdowcry/crm.lead.add.json";
+
+    // Build URL parameters
+    const params = new URLSearchParams({
+      "FIELDS[TITLE]": "New Lead",
+      "FIELDS[NAME]": name,
+      "FIELDS[PHONE][0][VALUE]": phone,
+      "FIELDS[PHONE][0][VALUE_TYPE]": "WORK",
+    });
+
+    try {
+      const response = await fetch(`${endpoint}?${params.toString()}`);
+      const data = await response.json();
+
+      if (!data.result) {
+        console.error("API error:", data);
+        alert("There was a problem submitting your data.");
+        setSubmitted(false); // allow retry
+      } else {
+        console.log("Lead created:", data.result);
+      }
+    } catch (err) {
+      console.error("Fetch error:", err);
+      alert("Failed to connect to the server.");
+      setSubmitted(false); // allow retry
+    }
+  };
 
   const testimonials = [
     {
@@ -68,50 +112,90 @@ export default function Home() {
                   and get 5 relaxation options in just 1 hour!
                 </p>
 
-                <form className="space-y-4">
-                  {/* Name */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">
-                      Name <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-                      required
-                    />
+                {submitted ? (
+                  <div className="text-center py-8">
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg
+                        className="w-8 h-8 text-green-500"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    </div>
+                    <p className="text-green-600 font-medium text-lg">
+                      Sent successfully!
+                    </p>
+                    <p className="text-gray-500 text-sm mt-2">
+                      We will contact you shortly.
+                    </p>
                   </div>
-
-                  {/* Phone */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">
-                      Phone <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-
-                  {/* Agreement */}
-                  <div className="flex items-center">
-                    <input type="checkbox" className="mr-2" required />
-                    <span className="text-sm text-gray-600">
-                      By clicking the button, I accept the terms of the
-                      agreement
-                    </span>
-                  </div>
-
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    className="w-full hover:cursor-pointer bg-terracotta text-white py-3 rounded-lg font-semibold hover:bg-red-500 transition"
+                ) : (
+                  <form
+                    onSubmit={handleSubmit}
+                    noValidate
+                    className="space-y-4"
                   >
-                    Choose a tour
-                  </button>
-                </form>
+                    {/* Name */}
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700">
+                        Name <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                        required
+                      />
+                    </div>
+
+                    {/* Phone */}
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700">
+                        Phone <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                        required
+                      />
+                    </div>
+
+                    {/* Agreement */}
+                    <div className="flex items-center">
+                      <input
+                        type="checkbox"
+                        className="mr-2"
+                        checked={agreement}
+                        onChange={() => setAgreement(!agreement)}
+                        required
+                      />
+                      <span className="text-sm text-gray-600">
+                        By clicking the button, I accept the terms of the
+                        agreement
+                      </span>
+                    </div>
+
+                    {/* Submit */}
+                    <button
+                      type="submit"
+                      className="w-full hover:cursor-pointer bg-terracotta text-white py-3 rounded-lg font-semibold hover:bg-red-500 transition"
+                    >
+                      Choose a tour
+                    </button>
+                  </form>
+                )}
               </div>
 
               {/* Divider */}
@@ -421,7 +505,7 @@ export default function Home() {
           <div className="f-section-small">
             <div className="f-container-regular text-center mb-12">
               <div className="f-title-wrapper-center margin-bottom-48">
-                <h6 className="f-h6-heading text-sm font-semibold uppercase tracking-wide">
+                <h6 className="f-h6-heading text-2xl md:text-3xl font-semibold uppercase tracking-wide">
                   Our partners
                 </h6>
               </div>
@@ -570,7 +654,7 @@ export default function Home() {
             </div>
           </section>
 
-          <div onClick={() => setDrawerOpen(true)}>
+          <div className="text-shadow-lg" onClick={() => setDrawerOpen(true)}>
             {/* Large Gallery Items */}
             <div className="f-gallery-image-x-tall grid grid-cols-2 gap-4 w-full mb-4">
               <a href="#Form" className="f-gallery-lightbox w-inline-block">
@@ -584,7 +668,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
                   <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
                     <div className="support-top-details-text _2 text-lg font-medium">
-                      from ???
+                      £530
                     </div>
                     <h2 className="support-top-heading text-2xl font-bold">
                       Canary Islands
@@ -694,8 +778,8 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Average Gallery Items */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {/* Large Gallery Items */}
+            <div className="grid grid-cols-2 gap-4 mb-4">
               <a href="#Form" className="f-gallery-lightbox w-inline-block">
                 <div
                   className="f-gallery-image-x-small-square _4 bg-cover bg-center h-48 rounded-lg relative"
@@ -734,6 +818,10 @@ export default function Home() {
                   </div>
                 </div>
               </a>
+            </div>
+
+            {/* Largest Gallery Item */}
+            <div className="grid grid-cols-1 gap-4">
               <a href="#Form" className="f-gallery-lightbox w-inline-block">
                 <div
                   className="f-gallery-image-x-small-square _4 bg-cover bg-center h-48 rounded-lg relative"
@@ -1026,26 +1114,34 @@ export default function Home() {
 
       <section id="Foto-section" className="flex flex-wrap">
         <Image
-          src="/default.png"
+          src="/default0.jpg"
           width={400}
           height={400}
           alt="Picture of the author"
           className="flex-1 min-w-[200px] object-cover"
         ></Image>
         <Image
-          src="/default.png"
+          src="/default0.jpg"
           width={400}
           height={400}
           alt="Picture of the author"
           className="flex-1 min-w-[200px] object-cover"
         ></Image>
         <Image
-          src="/default.png"
+          src="/default0.jpg"
           width={400}
           height={400}
           alt="Picture of the author"
           className="flex-1 min-w-[200px] object-cover"
         ></Image>
+      </section>
+
+      <section id="about">
+        <AboutPage />
+      </section>
+
+      <section id="contacts">
+        <ContactPage />
       </section>
 
       <ContactDrawer open={isDrawerOpen} onClose={() => setDrawerOpen(false)} />

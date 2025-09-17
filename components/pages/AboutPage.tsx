@@ -4,7 +4,7 @@ import ContactDrawer from "@/components/ContactDrawer";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Home() {
+export default function AboutPage() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   const features = [
@@ -86,20 +86,22 @@ export default function Home() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="container mx-auto max-w-6xl px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {features.map((f, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
-              >
-                <Image src={f.img} alt={f.alt} width={60} height={60} />
-                <h3 className="text-lg font-bold mt-4 mb-2">{f.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {f.text}
-                </p>
-              </div>
-            ))}
+        <div className="container mx-auto max-w-7xl px-6">
+          <div className="mx-auto p-15 w-full h-full  bg-mudblue/80 rounded-[70px] ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+              {features.map((f, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
+                >
+                  <Image src={f.img} alt={f.alt} width={60} height={60} />
+                  <h3 className="text-lg font-bold mt-4 mb-2">{f.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {f.text}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

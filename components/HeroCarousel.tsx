@@ -12,34 +12,19 @@ export default function HeroCarousel({
   // Redundant links
   const slides = [
     {
-      img: "/mediaLocal/vueaxnlv/easyjet-2026-web-desktop-1920x480.png",
-      alt: "EJND",
-      link: "https://www.haystravel.co.uk/holidays/offers/easyjet-holidays/",
+      img: "/slider-pics/Desktop - 1.jpg",
+      img_sm: "/slider-pics/iPhone 16 - 1.jpg",
+      alt: "Ocean Cruise",
     },
     {
-      img: "/mediaLocal/ewff1npx/pre-lates-web-1920x48012.webp",
-      alt: "Last Minute Holidays",
-      link: "https://www.haystravel.co.uk/holidays/last-minute-holidays/",
+      img: "/slider-pics/Desktop - 2.jpg",
+      img_sm: "/slider-pics/iPhone 16 - 2.jpg",
+      alt: "Tenerife",
     },
     {
-      img: "/mediaLocal/4yip5cfc/54762900588_0a78e48076_o.webp",
-      alt: "Jet2holidays",
-      link: "https://www.haystravel.co.uk/holidays/offers/jet2holidays/",
-    },
-    {
-      img: "/mediaLocal/thujrn2u/fx-card_summer-25-1920x480-1.webp",
-      alt: "Travel Money Card",
-      link: "https://www.haystravel.co.uk/travel-products/travel-money-card/",
-    },
-    {
-      img: "/mediaLocal/t0bjke2g/web-1920x480-3.webp",
-      alt: "HTMC Rate Sale",
-      link: "https://www.haystravel.co.uk/travel-products/travel-money-card/",
-    },
-    {
-      img: "/mediaLocal/nl3fnbj4/ntc1920x480-banner-1.webp",
-      alt: "New to Cruise",
-      link: "https://hayscruise.co.uk/new-to-cruise-2025",
+      img: "/slider-pics/Desktop - 3.jpg",
+      img_sm: "/slider-pics/iPhone 16 - 3.jpg",
+      alt: "Ideal Holiday",
     },
   ];
 
@@ -67,14 +52,26 @@ export default function HeroCarousel({
                 onSlideClick?.(); // open the drawer
               }}
             >
-              <Image
-                src={slide.img}
-                alt={slide.alt}
-                width={1920}
-                height={480}
-                className="w-full h-[480px] object-cover object-center"
-                priority={index === 0}
-              />
+              <div className="relative w-full h-[480px] md:h-[720px] ">
+                {/* Desktop Image */}
+                <Image
+                  src={slide.img}
+                  alt={slide.alt}
+                  fill
+                  className="hidden sm:block object-contain object-center"
+                  priority={index === 0}
+                />
+
+                {/* Mobile Image */}
+                <Image
+                  src={slide.img_sm}
+                  alt={slide.alt}
+                  fill
+                  className="block sm:hidden object-contain object-center"
+                  priority={index === 0}
+                />
+              </div>
+
               {/* Overlay (optional, for captions) */}
               <div className="absolute bottom-0 w-full bg-black/30 p-4 text-white">
                 <p className="text-lg font-semibold">{slide.alt}</p>

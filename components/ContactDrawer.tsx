@@ -13,14 +13,41 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
   const [agreement, setAgreement] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !phone || !agreement) {
-      alert("Будь ласка, заповніть усі поля");
+      alert("Please fill in all fields.");
       return;
     }
     setSubmitted(true);
     // Here you would connect Bitrix24 API or backend handler
+    const endpoint =
+      "https://crm-tour.bitrix24.eu/rest/1/w7kn0c290mdowcry/crm.lead.add.json";
+
+    // Build URL parameters
+    const params = new URLSearchParams({
+      "FIELDS[TITLE]": "New Lead",
+      "FIELDS[NAME]": name,
+      "FIELDS[PHONE][0][VALUE]": phone,
+      "FIELDS[PHONE][0][VALUE_TYPE]": "WORK",
+    });
+
+    try {
+      const response = await fetch(`${endpoint}?${params.toString()}`);
+      const data = await response.json();
+
+      if (!data.result) {
+        console.error("API error:", data);
+        alert("There was a problem submitting your data.");
+        setSubmitted(false); // allow retry
+      } else {
+        console.log("Lead created:", data.result);
+      }
+    } catch (err) {
+      console.error("Fetch error:", err);
+      alert("Failed to connect to the server.");
+      setSubmitted(false); // allow retry
+    }
   };
 
   return (

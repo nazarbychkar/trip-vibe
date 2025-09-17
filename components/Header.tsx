@@ -35,7 +35,7 @@ export default function Header() {
           <Link href="/" className={linkStyle}>
             Home
           </Link>
-          <Link href="/about" className={linkStyle}>
+          <Link href="/#about" className={linkStyle}>
             About
           </Link>
           <Link href="/#offers" className={linkStyle}>
@@ -44,7 +44,7 @@ export default function Header() {
           <Link href="/#destinations" className={linkStyle}>
             Destinations
           </Link>
-          <Link href="/contacts" className={linkStyle}>
+          <Link href="/#contacts" className={linkStyle}>
             Contacts
           </Link>
         </div>

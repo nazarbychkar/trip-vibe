@@ -2,64 +2,47 @@
 
 import { useState } from "react";
 
-export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    agreement: false,
-  });
-  type Errors = {
-    name?: string;
-    phone?: string;
-    agreement?: string;
-  };
-  const [errors, setErrors] = useState<Errors>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
+export default function ContactPage() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [agreement, setAgreement] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleInputChange = (e: {
-    target: { name: any; value: any; type: any; checked: any };
-  }) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
-
-  const validate = () => {
-    const newErrors: Errors = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    }
-
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone is required";
-    } else if (!/^\+?\d{10,15}$/.test(formData.phone)) {
-      newErrors.phone = "Enter a valid number";
-    }
-
-    if (!formData.agreement) {
-      newErrors.agreement = "Consent required";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!name || !phone || !agreement) {
+      alert("Please fill in all fields.");
+      return;
+    }
+    setSubmitted(true);
+    // Here you would connect Bitrix24 API or backend handler
+    const endpoint =
+      "https://crm-tour.bitrix24.eu/rest/1/w7kn0c290mdowcry/crm.lead.add.json";
 
-    if (!validate()) return;
+    // Build URL parameters
+    const params = new URLSearchParams({
+      "FIELDS[TITLE]": "New Lead",
+      "FIELDS[NAME]": name,
+      "FIELDS[PHONE][0][VALUE]": phone,
+      "FIELDS[PHONE][0][VALUE_TYPE]": "WORK",
+    });
 
-    setIsSubmitting(true);
+    try {
+      const response = await fetch(`${endpoint}?${params.toString()}`);
+      const data = await response.json();
 
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitSuccessful(true);
-    }, 1500);
+      if (!data.result) {
+        console.error("API error:", data);
+        alert("There was a problem submitting your data.");
+        setSubmitted(false); // allow retry
+      } else {
+        console.log("Lead created:", data.result);
+      }
+    } catch (err) {
+      console.error("Fetch error:", err);
+      alert("Failed to connect to the server.");
+      setSubmitted(false); // allow retry
+    }
   };
 
   return (
@@ -116,7 +99,7 @@ export default function ContactForm() {
 
               {/* Form Content */}
               <div className="px-8 py-8">
-                {isSubmitSuccessful ? (
+                {submitted ? (
                   <div className="text-center py-8">
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <svg
@@ -141,70 +124,70 @@ export default function ContactForm() {
                     </p>
                   </div>
                 ) : (
-                  <div className="space-y-6">
-                    {/* Name Field */}
-                    <div>
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="w-full bg-gray-50 border-0 rounded-lg px-4 py-4 text-gray-800 placeholder-gray-500 focus:bg-white focus:ring-2 focus:ring-blue-400 focus:outline-none transition-all"
-                      />
-                      {errors.name && (
+                <div className="space-y-6">
+                  {/* Name Field */}
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full bg-gray-50 border-0 rounded-lg px-4 py-4 text-gray-800 placeholder-gray-500 focus:bg-white focus:ring-2 focus:ring-blue-400 focus:outline-none transition-all"
+                    />
+                    {/* {errors.name && (
                         <p className="text-red-500 text-sm mt-2">
                           {errors.name}
                         </p>
-                      )}
-                    </div>
+                      )} */}
+                  </div>
 
-                    {/* Phone Field */}
-                    <div>
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full bg-gray-50 border-0 rounded-lg px-4 py-4 text-gray-800 placeholder-gray-500 focus:bg-white focus:ring-2 focus:ring-blue-400 focus:outline-none transition-all"
-                      />
-                      {errors.phone && (
+                  {/* Phone Field */}
+                  <div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full bg-gray-50 border-0 rounded-lg px-4 py-4 text-gray-800 placeholder-gray-500 focus:bg-white focus:ring-2 focus:ring-blue-400 focus:outline-none transition-all"
+                    />
+                    {/* {errors.phone && (
                         <p className="text-red-500 text-sm mt-2">
                           {errors.phone}
                         </p>
-                      )}
-                    </div>
+                      )} */}
+                  </div>
 
-                    {/* Agreement Checkbox */}
-                    <div className="flex items-start space-x-3 py-2">
-                      <input
-                        type="checkbox"
-                        name="agreement"
-                        checked={formData.agreement}
-                        onChange={handleInputChange}
-                        className="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
-                      />
-                      <label className="text-gray-600 text-sm leading-relaxed">
-                        By clicking the &#34;Send&#34; button, I accept the
-                        terms of the user agreement and consent to the
-                        processing of my data.
-                      </label>
-                    </div>
-                    {errors.agreement && (
+                  {/* Agreement Checkbox */}
+                  <div className="flex items-start space-x-3 py-2">
+                    <input
+                      type="checkbox"
+                      name="agreement"
+                      checked={agreement}
+                      onChange={() => setAgreement(!agreement)}
+                      className="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                    />
+                    <label className="text-gray-600 text-sm leading-relaxed">
+                      By clicking the &#34;Send&#34; button, I accept the terms
+                      of the user agreement and consent to the processing of my
+                      data.
+                    </label>
+                  </div>
+                  {/* {errors.agreement && (
                       <p className="text-red-500 text-sm">{errors.agreement}</p>
-                    )}
+                    )} */}
 
-                    {/* Submit Button */}
-                    <button
-                      type="button"
-                      onClick={handleSubmit}
-                      disabled={isSubmitting}
-                      className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-4 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
-                    >
-                      {isSubmitting ? (
+                  {/* Submit Button */}
+                  <button
+                    type="button"
+                    onClick={handleSubmit}
+                    disabled={submitted}
+                    className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-4 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+                  >
+                    { submitted ? (
                         <div className="flex items-center justify-center space-x-2">
-                          <svg
+                          {/* <svg
                             className="animate-spin w-5 h-5"
                             viewBox="0 0 24 24"
                           >
@@ -222,24 +205,26 @@ export default function ContactForm() {
                               className="opacity-75"
                               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                             />
-                          </svg>
-                          <span>Sending...</span>
+                          </svg> */}
+                          <span>Sent</span>
                         </div>
                       ) : (
                         "Send"
                       )}
-                    </button>
+                        
 
-                    {/* Terms Link */}
-                    <div className="text-center pt-4">
-                      <button
-                        type="button"
-                        className="text-gray-400 text-sm hover:text-gray-600 transition-colors border-b border-dotted border-gray-300 hover:border-gray-600"
-                      >
-                        Report a violation
-                      </button>
-                    </div>
+                  </button>
+
+                  {/* Terms Link */}
+                  <div className="text-center pt-4">
+                    <button
+                      type="button"
+                      className="text-gray-400 text-sm hover:text-gray-600 transition-colors border-b border-dotted border-gray-300 hover:border-gray-600"
+                    >
+                      Report a violation
+                    </button>
                   </div>
+                </div>
                 )}
               </div>
             </div>
