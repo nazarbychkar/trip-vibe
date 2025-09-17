@@ -11,7 +11,8 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [agreement, setAgreement] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  // const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,7 +20,7 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
       alert("Please fill in all fields.");
       return;
     }
-    setSubmitted(true);
+    setStatus("sending");
     // Here you would connect Bitrix24 API or backend handler
     const endpoint =
       "https://crm-tour.bitrix24.eu/rest/1/w7kn0c290mdowcry/crm.lead.add.json";
@@ -36,17 +37,21 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
       const response = await fetch(`${endpoint}?${params.toString()}`);
       const data = await response.json();
 
+      setTimeout(() => {
+        setStatus("sent");
+      }, 2000);
+
       if (!data.result) {
         console.error("API error:", data);
         alert("There was a problem submitting your data.");
-        setSubmitted(false); // allow retry
+        setStatus("idle"); // allow retry
       } else {
         console.log("Lead created:", data.result);
       }
     } catch (err) {
       console.error("Fetch error:", err);
       alert("Failed to connect to the server.");
-      setSubmitted(false); // allow retry
+      setStatus("idle"); // allow retry
     }
   };
 
@@ -85,7 +90,91 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
           </div>
 
           <div className="b24-form-content p-6">
-            {!submitted ? (
+            {status === "sending" && (
+              <div className="flex justify-center items-center p-10">
+                <p className="p-3">Sending...</p>
+                <svg className="animate-spin w-5 h-5" viewBox="0 0 24 24">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    className="opacity-25"
+                    fill="none"
+                  />
+                  <path
+                    fill="currentColor"
+                    className="opacity-75"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  />
+                </svg>
+              </div>
+            )}
+            {status === "sent" && (
+              <div className="text-center py-10">
+                <div className="text-green-600 text-xl font-semibold">
+                  ✅ Sent!
+                </div>
+                <p className="text-gray-600 mt-2">
+                  We will contact you shortly.
+                </p>
+              </div>
+            )}
+            {status === "idle" && (
+              <form onSubmit={handleSubmit} noValidate>
+                <div className="mb-4">
+                  <label className="block text-gray-700 mb-1">
+                    Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    autoComplete="given-name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-gray-700 mb-1">
+                    Phone <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    autoComplete="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
+                  />
+                </div>
+
+                <div className="mb-4 flex items-start">
+                  <input
+                    type="checkbox"
+                    checked={agreement}
+                    onChange={() => setAgreement(!agreement)}
+                    className="mt-1 mr-2"
+                  />
+                  <span className="text-sm text-gray-600">
+                    By clicking the &#34;Send&#34; button, I accept the terms of
+                    the user agreement and consent to the processing of my data.
+                  </span>
+                </div>
+
+                <div className="bg-terracotta rounded-lg">
+                  <button
+                    type="submit"
+                    className="w-full text-white py-2 rounded-lg font-semibold hover:bg-mudblue transition"
+                  >
+                    Send
+                  </button>
+                </div>
+              </form>
+            )}
+            {/* {!submitted ? (
               <form onSubmit={handleSubmit} noValidate>
                 <div className="mb-4">
                   <label className="block text-gray-700 mb-1">
@@ -146,7 +235,7 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
                   We will contact you shortly.
                 </p>
               </div>
-            )}
+            )} */}
           </div>
         </section>
       </div>

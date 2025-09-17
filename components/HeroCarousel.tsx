@@ -52,13 +52,13 @@ export default function HeroCarousel({
                 onSlideClick?.(); // open the drawer
               }}
             >
-              <div className="relative w-full h-[480px] md:h-[720px] ">
+              <div className="relative w-full h-[480px] md:h-screen ">
                 {/* Desktop Image */}
                 <Image
                   src={slide.img}
                   alt={slide.alt}
                   fill
-                  className="hidden sm:block object-contain object-center"
+                  className="hidden sm:block object-cover object-center"
                   priority={index === 0}
                 />
 
