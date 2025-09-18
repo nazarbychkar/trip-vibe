@@ -21,7 +21,7 @@ export default function ContactPage() {
 
     // Build URL parameters
     const params = new URLSearchParams({
-      "FIELDS[TITLE]": "New Lead",
+      "FIELDS[TITLE]": "Лид с сайта TripVibe UK Eng",
       "FIELDS[NAME]": name,
       "FIELDS[PHONE][0][VALUE]": phone,
       "FIELDS[PHONE][0][VALUE_TYPE]": "WORK",

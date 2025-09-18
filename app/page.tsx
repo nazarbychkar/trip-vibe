@@ -30,7 +30,7 @@ export default function Home() {
 
     // Build URL parameters
     const params = new URLSearchParams({
-      "FIELDS[TITLE]": "New Lead",
+      "FIELDS[TITLE]": "Лид с сайта TripVibe UK Eng",
       "FIELDS[NAME]": name,
       "FIELDS[PHONE][0][VALUE]": phone,
       "FIELDS[PHONE][0][VALUE_TYPE]": "WORK",
@@ -75,6 +75,33 @@ export default function Home() {
       avatar:
         "https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65e09e9e1a1c7036c3b81456_images.jpg",
       rating: 5,
+    },
+  ];
+
+  const features = [
+    {
+      img: "https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65afd5f52cb2e02b00c0ba68_verified.svg",
+      alt: "Warranty Icon",
+      title: "Professionalism and Experience",
+      text: "Our team has over 10 years of experience in tourism. We are experts who know how to make your trip the best it can be.",
+    },
+    {
+      img: "https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65afd5f52cb2e02b00c0ba69_cart.svg",
+      alt: "Shopping Cart Icon",
+      title: "Digitalization and Convenience",
+      text: "We use modern technologies to ensure maximum convenience in booking and tracking trips. TripVibe is not just a trip, it is an efficient and convenient service at every stage of your vacation.",
+    },
+    {
+      img: "https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65afd5f52cb2e02b00c0ba6a_transport.svg",
+      alt: "Delivery Icon",
+      title: "Comprehensive Support",
+      text: "TripVibe is always available 24/7. Our team is ready to provide you with full support and resolve all your questions or misunderstandings at any time of the day.",
+    },
+    {
+      img: "https://cdn.prod.website-files.com/65afd5f42cb2e02b00c0b9bb/65afd5f52cb2e02b00c0ba6b_chat-alt.svg",
+      alt: "Service Icon",
+      title: "Personal Approach",
+      text: "We understand that every traveler is unique. TripVibe offers flexible approaches and personalized itineraries, taking into account your needs and desires.",
     },
   ];
 
@@ -390,11 +417,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="support-section py-20 bg-gray-50">
+      {/* <section className="support-section py-20 bg-gray-50">
         <div className="container max-w-6xl mx-auto px-6">
-          {/* Top Wrapper */}
           <div className="support-top-wrapper flex flex-col md:flex-row md:justify-between md:items-start mb-12 gap-6">
-            {/* Left: Heading */}
             <div className="support-top-left md:w-1/2">
               <div className="f-heading-detail-small-2 text-sm font-semibold uppercase mb-2">
                 ABOUT US
@@ -404,7 +429,6 @@ export default function Home() {
               </h2>
             </div>
 
-            {/* Right: Paragraph */}
             <div className="support-top-right md:w-1/2">
               <p className="text-gray-700">
                 We are TripVibe, a team of experienced professionals in the
@@ -417,9 +441,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Support Squares */}
           <div className="support-wrapper grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Column 1 */}
             <div className="support-column text-center md:text-left">
               <div className="support-square relative p-6 bg-white rounded-lg shadow-lg mb-4">
                 <div className="support-square-number text-2xl font-bold mb-2">
@@ -445,7 +467,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Column 2 */}
             <div className="support-column text-center md:text-left">
               <div className="support-square relative p-6 bg-white rounded-lg shadow-lg mb-4">
                 <div className="support-square-number text-2xl font-bold mb-2">
@@ -470,7 +491,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Column 3 */}
             <div className="support-column text-center md:text-left">
               <div className="support-square relative p-6 bg-white rounded-lg shadow-lg mb-4">
                 <div className="support-square-number text-2xl font-bold mb-2">
@@ -494,6 +514,27 @@ export default function Home() {
                 flexible trips, both individual tours and packages, taking into
                 account any wishes.
               </p>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto max-w-7xl px-6">
+          <div className="mx-auto p-15 w-full h-full  bg-mudblue/80 rounded-[70px] ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+              {features.map((f, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition"
+                >
+                  <Image src={f.img} alt={f.alt} width={60} height={60} />
+                  <h3 className="text-lg font-bold mt-4 mb-2">{f.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {f.text}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -984,8 +1025,8 @@ export default function Home() {
                     src={t.avatar}
                     alt={t.author}
                     className="rounded-full object-cover"
-                    width={12}
-                    height={12}
+                    width={50}
+                    height={50}
                   />
                   <p className="f-paragraph-regular f-text-weight-medium font-medium">
                     {t.author}
