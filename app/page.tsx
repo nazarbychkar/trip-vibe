@@ -13,7 +13,7 @@ export default function Home() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   const [name, setName] = useState("");
-  var [phone, setPhone] = useState("+44");
+  const [phone, setPhone] = useState("+44");
   const [agreement, setAgreement] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
