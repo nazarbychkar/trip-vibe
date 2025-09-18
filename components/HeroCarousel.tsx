@@ -12,17 +12,17 @@ export default function HeroCarousel({
   // Redundant links
   const slides = [
     {
-      img: "/slider-pics/Desktop - 1.jpg",
+      img: "/slider-pics/Desktop - 5.jpg",
       img_sm: "/slider-pics/iPhone 16 - 1.jpg",
       alt: "Ocean Cruise",
     },
     {
-      img: "/slider-pics/Desktop - 2.jpg",
+      img: "/slider-pics/Desktop - 6.png",
       img_sm: "/slider-pics/iPhone 16 - 2.jpg",
       alt: "Tenerife",
     },
     {
-      img: "/slider-pics/Desktop - 3.jpg",
+      img: "/slider-pics/Desktop - 7.jpg",
       img_sm: "/slider-pics/iPhone 16 - 3.jpg",
       alt: "Ideal Holiday",
     },
@@ -52,7 +52,7 @@ export default function HeroCarousel({
                 onSlideClick?.(); // open the drawer
               }}
             >
-              <div className="relative w-full h-[480px] md:h-screen ">
+              <div className="relative w-full h-[450px] md:h-[850px]">
                 {/* Desktop Image */}
                 <Image
                   src={slide.img}
