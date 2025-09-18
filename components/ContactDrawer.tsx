@@ -9,10 +9,40 @@ type ContactDrawerProps = {
 
 export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phone, setPhone] = useState("+44");
   const [agreement, setAgreement] = useState(false);
   // const [submitted, setSubmitted] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+
+  const phonePrefix = "+44";
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.target.value;
+
+    // If user tries to delete the prefix, revert
+    if (!input.startsWith(phonePrefix)) return;
+
+    // Remove any non-digit characters from the rest
+    const digitsOnly = input.slice(phonePrefix.length).replace(/\D/g, "");
+
+    // Limit to 9 digits
+    const limitedDigits = digitsOnly.slice(0, 10);
+
+    setPhone(phonePrefix + limitedDigits);
+  };
+
+  const handlePhoneKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const input = e.currentTarget;
+    const cursorPos = input.selectionStart || 0;
+
+    // Prevent deleting the prefix
+    if (
+      cursorPos <= phonePrefix.length &&
+      (e.key === "Backspace" || e.key === "Delete")
+    ) {
+      e.preventDefault();
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -132,6 +162,7 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
                     name="name"
                     autoComplete="given-name"
                     value={name}
+                    required
                     onChange={(e) => setName(e.target.value)}
                     className="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
                   />
@@ -145,8 +176,12 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
                     type="tel"
                     name="phone"
                     autoComplete="tel"
+                    onChange={handlePhoneChange}
+                    onKeyDown={handlePhoneKeyDown}
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    inputMode="numeric"
+                    pattern="\+447\d{9}" // Optional HTML pattern for 9 digits after +447
+                    required
                     className="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
                   />
                 </div>
@@ -157,6 +192,7 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
                     checked={agreement}
                     onChange={() => setAgreement(!agreement)}
                     className="mt-1 mr-2"
+                    required
                   />
                   <span className="text-sm text-gray-600">
                     By clicking the &#34;Send&#34; button, I accept the terms of

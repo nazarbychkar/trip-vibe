@@ -29,7 +29,7 @@ export default function HeroCarousel({
   ];
 
   return (
-    <section className="relative">
+    <section className=" bg-mudblue/20">
       <Splide
         options={{
           type: "loop",
@@ -52,7 +52,7 @@ export default function HeroCarousel({
                 onSlideClick?.(); // open the drawer
               }}
             >
-              <div className="relative w-full h-[450px] md:h-[850px]">
+              <div className="relative mx-auto w-full md:w-[1500px] h-[450px] md:h-[650px]">
                 {/* Desktop Image */}
                 <Image
                   src={slide.img}
@@ -73,7 +73,7 @@ export default function HeroCarousel({
               </div>
 
               {/* Overlay (optional, for captions) */}
-              <div className="absolute bottom-0 w-full bg-black/30 p-4 text-white">
+              <div className="absolute bottom-0 w-full hidden md:block bg-black/30 p-4 text-white">
                 <p className="text-lg font-semibold">{slide.alt}</p>
               </div>
             </a>

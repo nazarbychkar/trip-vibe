@@ -4,9 +4,39 @@ import { useState } from "react";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phone, setPhone] = useState("+44");
   const [agreement, setAgreement] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const phonePrefix = "+44";
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.target.value;
+
+    // If user tries to delete the prefix, revert
+    if (!input.startsWith(phonePrefix)) return;
+
+    // Remove any non-digit characters from the rest
+    const digitsOnly = input.slice(phonePrefix.length).replace(/\D/g, "");
+
+    // Limit to 9 digits
+    const limitedDigits = digitsOnly.slice(0, 10);
+
+    setPhone(phonePrefix + limitedDigits);
+  };
+
+  const handlePhoneKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const input = e.currentTarget;
+    const cursorPos = input.selectionStart || 0;
+
+    // Prevent deleting the prefix
+    if (
+      cursorPos <= phonePrefix.length &&
+      (e.key === "Backspace" || e.key === "Delete")
+    ) {
+      e.preventDefault();
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -124,68 +154,74 @@ export default function ContactPage() {
                     </p>
                   </div>
                 ) : (
-                <div className="space-y-6">
-                  {/* Name Field */}
-                  <div>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="w-full bg-gray-50 border-0 rounded-lg px-4 py-4 text-gray-800 placeholder-gray-500 focus:bg-white focus:ring-2 focus:ring-blue-400 focus:outline-none transition-all"
-                    />
-                    {/* {errors.name && (
+                  <div className="space-y-6">
+                    {/* Name Field */}
+                    <div>
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        value={name}
+                        required
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full bg-gray-50 border-0 rounded-lg px-4 py-4 text-gray-800 placeholder-gray-500 focus:bg-white focus:ring-2 focus:ring-blue-400 focus:outline-none transition-all"
+                      />
+                      {/* {errors.name && (
                         <p className="text-red-500 text-sm mt-2">
                           {errors.name}
                         </p>
                       )} */}
-                  </div>
+                    </div>
 
-                  {/* Phone Field */}
-                  <div>
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="w-full bg-gray-50 border-0 rounded-lg px-4 py-4 text-gray-800 placeholder-gray-500 focus:bg-white focus:ring-2 focus:ring-blue-400 focus:outline-none transition-all"
-                    />
-                    {/* {errors.phone && (
+                    {/* Phone Field */}
+                    <div>
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone"
+                        onChange={handlePhoneChange}
+                        onKeyDown={handlePhoneKeyDown}
+                        value={phone}
+                        inputMode="numeric"
+                        pattern="\+447\d{9}"
+                        required
+                        className="w-full bg-gray-50 border-0 rounded-lg px-4 py-4 text-gray-800 placeholder-gray-500 focus:bg-white focus:ring-2 focus:ring-blue-400 focus:outline-none transition-all"
+                      />
+                      {/* {errors.phone && (
                         <p className="text-red-500 text-sm mt-2">
                           {errors.phone}
                         </p>
                       )} */}
-                  </div>
+                    </div>
 
-                  {/* Agreement Checkbox */}
-                  <div className="flex items-start space-x-3 py-2">
-                    <input
-                      type="checkbox"
-                      name="agreement"
-                      checked={agreement}
-                      onChange={() => setAgreement(!agreement)}
-                      className="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
-                    />
-                    <label className="text-gray-600 text-sm leading-relaxed">
-                      By clicking the &#34;Send&#34; button, I accept the terms
-                      of the user agreement and consent to the processing of my
-                      data.
-                    </label>
-                  </div>
-                  {/* {errors.agreement && (
+                    {/* Agreement Checkbox */}
+                    <div className="flex items-start space-x-3 py-2">
+                      <input
+                        type="checkbox"
+                        name="agreement"
+                        required
+                        checked={agreement}
+                        onChange={() => setAgreement(!agreement)}
+                        className="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                      />
+                      <label className="text-gray-600 text-sm leading-relaxed">
+                        By clicking the &#34;Send&#34; button, I accept the
+                        terms of the user agreement and consent to the
+                        processing of my data.
+                      </label>
+                    </div>
+                    {/* {errors.agreement && (
                       <p className="text-red-500 text-sm">{errors.agreement}</p>
                     )} */}
 
-                  {/* Submit Button */}
-                  <button
-                    type="button"
-                    onClick={handleSubmit}
-                    disabled={submitted}
-                    className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-4 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
-                  >
-                    { submitted ? (
+                    {/* Submit Button */}
+                    <button
+                      type="button"
+                      onClick={handleSubmit}
+                      disabled={submitted}
+                      className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-4 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+                    >
+                      {submitted ? (
                         <div className="flex items-center justify-center space-x-2">
                           {/* <svg
                             className="animate-spin w-5 h-5"
@@ -211,20 +247,18 @@ export default function ContactPage() {
                       ) : (
                         "Send"
                       )}
-                        
-
-                  </button>
-
-                  {/* Terms Link */}
-                  <div className="text-center pt-4">
-                    <button
-                      type="button"
-                      className="text-gray-400 text-sm hover:text-gray-600 transition-colors border-b border-dotted border-gray-300 hover:border-gray-600"
-                    >
-                      Report a violation
                     </button>
+
+                    {/* Terms Link */}
+                    <div className="text-center pt-4">
+                      <button
+                        type="button"
+                        className="text-gray-400 text-sm hover:text-gray-600 transition-colors border-b border-dotted border-gray-300 hover:border-gray-600"
+                      >
+                        Report a violation
+                      </button>
+                    </div>
                   </div>
-                </div>
                 )}
               </div>
             </div>

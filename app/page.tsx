@@ -13,9 +13,39 @@ export default function Home() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  var [phone, setPhone] = useState("+44");
   const [agreement, setAgreement] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const phonePrefix = "+44";
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.target.value;
+
+    // If user tries to delete the prefix, revert
+    if (!input.startsWith(phonePrefix)) return;
+
+    // Remove any non-digit characters from the rest
+    const digitsOnly = input.slice(phonePrefix.length).replace(/\D/g, "");
+
+    // Limit to 9 digits
+    const limitedDigits = digitsOnly.slice(0, 10);
+
+    setPhone(phonePrefix + limitedDigits);
+  };
+
+  const handlePhoneKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const input = e.currentTarget;
+    const cursorPos = input.selectionStart || 0;
+
+    // Prevent deleting the prefix
+    if (
+      cursorPos <= phonePrefix.length &&
+      (e.key === "Backspace" || e.key === "Delete")
+    ) {
+      e.preventDefault();
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,6 +53,22 @@ export default function Home() {
       alert("Please fill in all fields.");
       return;
     }
+
+    // if (phone.startsWith("07")) {
+    //   phone = "+44" + phone.slice(1);
+    // }
+
+    // const isValidUKNumber = (input: string) => {
+    //   const ukPhoneRegex = /^\+447\d{9}$/; // E.g. +447123456789
+    //   return ukPhoneRegex.test(input);
+    // };
+
+    // if (!isValidUKNumber(phone)) {
+    //   alert(
+    //     "It seems like the phone number might not be quite right. Please check it and try again.."
+    //   );
+    //   return;
+    // }
     setSubmitted(true);
     // Here you would connect Bitrix24 API or backend handler
     const endpoint =
@@ -104,6 +150,8 @@ export default function Home() {
       text: "We understand that every traveler is unique. TripVibe offers flexible approaches and personalized itineraries, taking into account your needs and desires.",
     },
   ];
+
+
 
   return (
     <div>
@@ -193,8 +241,11 @@ export default function Home() {
                         type="tel"
                         name="phone"
                         value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
+                        onChange={handlePhoneChange}
+                        onKeyDown={handlePhoneKeyDown}
                         className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                        inputMode="numeric"
+                        pattern="\+447\d{9}" // Optional HTML pattern for 9 digits after +447
                         required
                       />
                     </div>
@@ -241,8 +292,9 @@ export default function Home() {
         </div>
       </section>
 
-      <HeroCarousel onSlideClick={() => setDrawerOpen(true)}></HeroCarousel>
-
+      <div>
+        <HeroCarousel onSlideClick={() => setDrawerOpen(true)}></HeroCarousel>
+      </div>
       <section id="offers" className="wbs-section py-20">
         <div className="wbs-container-2 px-6 max-w-7xl mx-auto">
           {/* Section Header */}
