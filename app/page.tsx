@@ -151,8 +151,6 @@ export default function Home() {
     },
   ];
 
-
-
   return (
     <div>
       {/* TODO: make background on phone properly */}
@@ -761,7 +759,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-black/10 rounded-lg z-0"></div>
                   <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
                     <div className="support-top-details-text _2 text-lg font-medium">
-                      £530
+                      from £530
                     </div>
                     <h2 className="support-top-heading text-2xl font-bold">
                       Canary Islands
@@ -803,7 +801,7 @@ export default function Home() {
                   <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
                     {" "}
                     <div className="support-top-details-text _2 text-lg font-medium">
-                      £870
+                      from £870
                     </div>
                     <h2 className="support-top-heading text-2xl font-bold shadow">
                       Florida USA
@@ -823,7 +821,7 @@ export default function Home() {
                   <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
                     {" "}
                     <div className="support-top-details-text _2 text-lg font-medium">
-                      £490
+                      from £490
                     </div>
                     <h2 className="support-top-heading text-2xl font-bold">
                       Spain South Coast
@@ -842,7 +840,7 @@ export default function Home() {
                   <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
                     {" "}
                     <div className="support-top-details-text _2 text-lg font-medium">
-                      £380
+                      from £380
                     </div>
                     <h2 className="support-top-heading text-2xl font-bold">
                       Mallorca
@@ -861,7 +859,7 @@ export default function Home() {
                   <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
                     {" "}
                     <div className="support-top-details-text _2 text-lg font-medium">
-                      £430
+                      from £430
                     </div>
                     <h2 className="support-top-heading text-2xl font-bold">
                       Greece
@@ -884,7 +882,7 @@ export default function Home() {
                   <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
                     {" "}
                     <div className="support-top-details-text _2 text-lg font-medium">
-                      £520
+                      from £520
                     </div>
                     <h2 className="support-top-heading text-2xl font-bold">
                       Türkiye
@@ -903,7 +901,7 @@ export default function Home() {
                   <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
                     {" "}
                     <div className="support-top-details-text _2 text-lg font-medium">
-                      £798
+                      from £798
                     </div>
                     <h2 className="support-top-heading text-2xl font-bold">
                       Thailand
@@ -926,7 +924,7 @@ export default function Home() {
                   <div className="naikrashi-napriamki realtive absolute z-10 bottom-4 left-4 text-white">
                     {" "}
                     <div className="support-top-details-text _2 text-lg font-medium">
-                      £340
+                      from £340
                     </div>
                     <h2 className="support-top-heading text-2xl font-bold">
                       World Cruises

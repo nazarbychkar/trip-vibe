@@ -22,16 +22,16 @@ export default function Footer() {
 
           {/* Social icons */}
           <div className="flex gap-6">
-            <Link href="https://t.me/+SmTyR-SXMzk5NThi" target="_blank">
+            {/* <Link href="https://t.me/+SmTyR-SXMzk5NThi" target="_blank">
               <Image
                 src="icons/telegram.svg"
                 alt="Telegram"
                 width={30}
                 height={30}
               />
-            </Link>
+            </Link> */}
             <Link
-              href="https://www.facebook.com/profile.php?id=61557387382751"
+              href="https://www.facebook.com/profile.php?id=61580762714961"
               target="_blank"
             >
               <Image
@@ -42,7 +42,7 @@ export default function Footer() {
               />
             </Link>
             <Link
-              href="https://www.instagram.com/tripvibe.travel?igsh=ZjF5N2dwODVjZm52"
+              href="https://www.instagram.com/tripvibe.uk.travel?igsh=MWxzMDI5OTQ3eDQwdQ%3D%3D&utm_source=qr"
               target="_blank"
             >
               <Image
