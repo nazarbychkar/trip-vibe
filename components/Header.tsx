@@ -26,7 +26,7 @@ export default function Header() {
         </Link>
 
         {/* Phone */}
-        <Link href="tel:+380444999722" className="block text-xl md:hidden">
+        <Link href="tel:+44 7520 665098" className="block text-xl md:hidden">
           📞
         </Link>
 

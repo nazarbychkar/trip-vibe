@@ -590,6 +590,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="pt-20 bg-white max-w-6xl mx-auto flex flex-col items-center gap-5">
+        <span className="text-2xl md:text-3xl uppercase">Protected by ATOL & ABTA</span>
+        <div className="flex flex-col md:flex-row justify-center gap-5">
+          <div className="f-logo-block ">
+            <Image
+              src="/tour-operators-logos/ABTA2.png"
+              alt="ABTA"
+              width={250}
+              height={250}
+            />
+          </div>
+          <div className="f-logo-block">
+            <Image
+              src="/tour-operators-logos/ATOL2.png"
+              alt="Atol"
+              width={250}
+              height={250}
+            />
+          </div>
+        </div>
+
+        <span className="w-1/2 text-center uppercase text-gray-700 text-base sm:text-lg leading-relaxed">
+          We are ATOL & ABTA Protected – this means your money is safe and
+          you’re fully covered if anything happens to your travel provider
+        </span>
+      </section>
+
       <section className="wbs-section-overflow py-20 bg-white max-w-6xl mx-auto">
         <div className="wbs-container mx-auto px-6">
           {/* Section Header */}
@@ -604,19 +631,18 @@ export default function Home() {
 
             {/* Partners Grid */}
             <div className="w-layout-grid f-grid-four-column grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 wwlg:grid-cols-7 gap-6 items-center justify-items-center ">
-              <div className="f-logo-block ">
+              <div className="f-logo-block">
                 <Image
-                  src="/tour-operators-logos/abta.png"
-                  alt="ABTA"
+                  src="/tour-operators-logos/Cruisenation.jpg"
+                  alt="Cruisenation"
                   width={150}
                   height={150}
                 />
               </div>
-
               <div className="f-logo-block">
                 <Image
-                  src="/tour-operators-logos/atol-n.png"
-                  alt="Atol"
+                  src="/tour-operators-logos/Cruisenation more.jpg"
+                  alt="Cruisenation more"
                   width={150}
                   height={150}
                 />
