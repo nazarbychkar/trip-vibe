@@ -77,7 +77,7 @@ export default function Header() {
           </Link>
           <Link
             className={linkStyle}
-            href="/about"
+            href="/#about"
             onClick={() => setMobileMenuOpen(false)}
           >
             About
@@ -98,7 +98,7 @@ export default function Header() {
           </Link>
           <Link
             className={linkStyle}
-            href="/contacts"
+            href="/#contacts"
             onClick={() => setMobileMenuOpen(false)}
           >
             Contacts
