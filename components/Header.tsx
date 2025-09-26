@@ -32,7 +32,7 @@ export default function Header() {
             width={22}
             height={22}
             alt="phone"
-            className="invert"
+            className="invert brightness-0"
           ></Image>
         </Link>
 
