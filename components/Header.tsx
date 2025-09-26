@@ -27,7 +27,7 @@ export default function Header() {
 
         {/* Phone */}
         <Link href="tel:+44 7520 665098" className="block text-xl md:hidden">
-          📞
+          <Image src="/icons/telephone.png" width={22} height={22} alt="phone"></Image>
         </Link>
 
         {/* Desktop links */}

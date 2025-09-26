@@ -179,10 +179,10 @@ export default function Home() {
               {/* Right: Form */}
               <div className="form-wrapper bg-white shadow-lg rounded-xl p-8">
                 <h2 className="text-xl font-semibold text-gray-900 mb-2">
-                  Fill out the form now
+                  Fill in the form —
                 </h2>
                 <p className="text-gray-600 mb-6">
-                  and get 5 relaxation options in just 1 hour!
+                  get 5 trip ideas in 1 hour!
                 </p>
 
                 {submitted ? (
@@ -591,7 +591,9 @@ export default function Home() {
       </section>
 
       <section className="pt-20 bg-white max-w-6xl mx-auto flex flex-col items-center gap-5">
-        <span className="text-2xl md:text-3xl uppercase">Protected by ATOL & ABTA</span>
+        <span className="text-2xl md:text-3xl uppercase">
+          Protected by ATOL & ABTA
+        </span>
         <div className="flex flex-col md:flex-row justify-center gap-5">
           <div className="f-logo-block ">
             <Image
@@ -612,8 +614,8 @@ export default function Home() {
         </div>
 
         <span className="w-1/2 text-center uppercase text-gray-700 text-base sm:text-lg leading-relaxed">
-          We are ATOL & ABTA Protected – this means your money is safe and
-          you’re fully covered if anything happens to your travel provider
+          We are ATOL & ABTA protected — your money is safe and you&#39;re fully
+          covered if something happens to your travel provider.
         </span>
       </section>
 
@@ -633,7 +635,7 @@ export default function Home() {
             <div className="w-layout-grid f-grid-four-column grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 wwlg:grid-cols-7 gap-6 items-center justify-items-center ">
               <div className="f-logo-block">
                 <Image
-                  src="/tour-operators-logos/Cruisenation.jpg"
+                  src="/tour-operators-logos/Cruisenation (2).jpg"
                   alt="Cruisenation"
                   width={150}
                   height={150}
@@ -641,7 +643,7 @@ export default function Home() {
               </div>
               <div className="f-logo-block">
                 <Image
-                  src="/tour-operators-logos/Cruisenation more.jpg"
+                  src="/tour-operators-logos/Cruisenation more (2).jpg"
                   alt="Cruisenation more"
                   width={150}
                   height={150}
@@ -1184,9 +1186,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="f-paragraph-regular-3 text-gray-700">
-                    Write a letter to the post office{" "}
+                    Write to us at{" "}
                     <span className="font-medium">info.uk@tripvibe.travel</span>{" "}
-                    аби start cooperation!
+                    to start cooperation!
                   </div>
                 </div>
               </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import ContactDrawer from "@/components/ContactDrawer";
-import Image from "next/image";
 import { useState } from "react";
 
 export default function AboutPage() {

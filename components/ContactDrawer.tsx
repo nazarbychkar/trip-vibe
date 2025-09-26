@@ -115,7 +115,7 @@ export default function ContactDrawer({ open, onClose }: ContactDrawerProps) {
               Fill out the form
             </h2>
             <p className="b24-form-header-description text-gray-600 mt-2">
-              and we will contact you in 2 minutes! minutes!
+              and we will contact you in 2 minutes!
             </p>
           </div>
 
