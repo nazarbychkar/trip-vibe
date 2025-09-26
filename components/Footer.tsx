@@ -39,6 +39,7 @@ export default function Footer() {
                 alt="Facebook"
                 width={30}
                 height={30}
+                className="invert"
               />
             </Link>
             <Link
@@ -50,6 +51,7 @@ export default function Footer() {
                 alt="Instagram"
                 width={30}
                 height={30}
+                className="invert"
               />
             </Link>
           </div>

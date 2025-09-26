@@ -27,7 +27,13 @@ export default function Header() {
 
         {/* Phone */}
         <Link href="tel:+44 7520 665098" className="block text-xl md:hidden">
-          <Image src="/icons/telephone.png" width={22} height={22} alt="phone"></Image>
+          <Image
+            src="/icons/telephone.png"
+            width={22}
+            height={22}
+            alt="phone"
+            className="invert"
+          ></Image>
         </Link>
 
         {/* Desktop links */}
@@ -51,7 +57,7 @@ export default function Header() {
 
         <button
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:block lg:hidden text-2xl"
+          className="md:block lg:hidden text-2xl text-white"
         >
           ☰
         </button>
